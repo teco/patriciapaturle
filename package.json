@@ -1,6 +1,7 @@
 {
   "name": "patriciapaturlereact",
   "version": "1.0.0",
+  "type": "module",
   "homepage": "https://teco.github.io/patriciapaturle",
   "scripts": {
     "dev": "vite",
