@@ -1,5 +1,5 @@
 import { Badge } from "@/components/ui/badge";
-import { Award, Users, Clock, Heart, Palette, MicroscopeIcon, Microscope, HeartHandshake } from "lucide-react";
+import { Award, Heart, Palette, Microscope, HeartHandshake } from "lucide-react";
 
 const AboutSection = () => {
   const achievements = [
@@ -35,7 +35,7 @@ const AboutSection = () => {
               {/* Placeholder for doctor's photo */}
               <div className="aspect-[4/5] w-full relative">
   <img
-    src="/about-photo.jpg"
+    src="/aboutphoto.jpg"
     alt="Foto da Dra. Patricia Paturle"
     className="w-full h-full object-cover rounded-2xl"
   />
