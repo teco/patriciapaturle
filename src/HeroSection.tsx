@@ -10,7 +10,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section id="home" className="relative min-h-[40vh] flex items-center justify-center bg-gradient-primary text-primary-foreground overflow-hidden">
+    <section id="home" className="pt-10 pb-5 bg-background relative overflow-hidden flex items-center justify-center bg-gradient-primary text-primary-foreground overflow-hidden">
   {/* Background Image */}
   <img
     src="/hero-bg.jpg"
@@ -38,7 +38,7 @@ const HeroSection = () => {
           <div className="max-w-4xl mx-auto mb-3 fade-in delay-200">
             <div className="w-full bg-white rounded-2xl shadow-lg flex justify-center items-center py-12 px-4">
               <img
-                src="/clinica-logo.png"
+                src="/clinica-logo.svg"
                 alt="Clinic Logo"
                 className="h-32 md:h-48 lg:h-64 object-contain max-w-full"
               />
@@ -46,10 +46,14 @@ const HeroSection = () => {
           </div>
 
           {/* Subtitle */}
-          <p className="text-lg md:text-xl lg:text-2xl mb-4 max-w-3xl mx-auto opacity-90 leading-relaxed fade-in delay-400 text-primary">
-            Experimente tratamentos estéticos premium com nossa dermatologista especializada. 
-            Com mais de 15 anos de experiência, oferecemos resultados excepcionais com uma abordagem artística.
-          </p>
+            <div className="mb-4 max-w-3xl mx-auto text-center fade-in delay-400">
+            <h2 className="text-xl md:text-2xl lg:text-2xl font-semibold text-primary mb-2">
+              <strong>Técnica refinada. Olhar apurado. Resultados naturais.</strong>
+            </h2>
+            <p className="text-lg md:text-xl lg:text-2xl opacity-90 leading-relaxed text-primary">
+              Mais de 25 anos de experiência em dermatologia estética, unindo precisão técnica e sensibilidade estética.
+            </p>
+            </div>
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center fade-in delay-600">
@@ -63,7 +67,7 @@ const HeroSection = () => {
             </Button>
             
             <Button
-              onClick={() => document.getElementById('treatments')?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
               variant="outline"
               size="lg"
               className="btn-clinic-outline border-primary text-primary bg-transparent hover:bg-primary hover:text-primary-foreground"
@@ -72,21 +76,7 @@ const HeroSection = () => {
             </Button>
           </div>
 
-          {/* Stats */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8 fade-in delay-800 text-primary">
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold mb-2">15+</div>
-              <div className="text-sm opacity-80">Anos de Experiência</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold mb-2">1000+</div>
-              <div className="text-sm opacity-80">Pacientes Satisfeitas</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold mb-2">98%</div>
-              <div className="text-sm opacity-80">Taxa de Satisfação</div>
-            </div>
-          </div>
+
         </div>
       </div>
 

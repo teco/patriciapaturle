@@ -24,9 +24,8 @@ const Navigation = () => {
 
   const navItems = [
     { label: "Home", href: "home" },
-    { label: "Tratamentos", href: "treatments" },
+    { label: "Tratamentos", href: "services" }, // Now links to ServicesSection
     { label: "Sobre", href: "about" },
-    { label: "Serviços", href: "services" },
     { label: "FAQ", href: "faq" },
     { label: "Blog", href: "blog" },
     { label: "Contato", href: "contact" },
@@ -47,7 +46,7 @@ const Navigation = () => {
             </div>
             <div>
               <div className="font-bold text-lg text-foreground">PATRICIA PATURLE</div>
-              <div className="text-sm text-primary">dermatologista</div>
+              <div className="text-sm text-primary">CRMMG 34274 | REQ 23480</div>
             </div>
           </div>
 

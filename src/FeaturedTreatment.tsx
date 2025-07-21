@@ -1,115 +1,111 @@
-import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Heart, Sparkles, Star, CheckCircle } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Layers, CheckCircle2, AlertTriangle } from "lucide-react";
 
 const FeaturedTreatment = () => {
-  const scrollToContact = () => {
-    const element = document.getElementById('contact');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  };
-
-  const features = [
-    {
-      icon: <Star className="w-6 h-6" />,
-      title: "Técnica Avançada",
-      description: "Métodos de ponta e produtos premium com mínimo tempo de recuperação."
-    },
-    {
-      icon: <Heart className="w-6 h-6" />,
-      title: "Abordagem Personalizada",
-      description: "Tratamento adaptado à sua estrutura facial e objetivos estéticos."
-    },
-    {
-      icon: <Sparkles className="w-6 h-6" />,
-      title: "Cuidado Especializado",
-      description: "Procedimento realizado por dermatologista experiente com foco em segurança e conforto."
-    }
-  ];
-
   return (
-    <section id="treatments" className="py-10 bg-background">
-      <div className="container mx-auto px-4">
-        <Card className="rounded-xl border bg-primary text-card-foreground shadow clinic-card-featured max-w-6xl mx-auto relative overflow-hidden">
-          {/* Background Pattern */}
-          <div className="absolute inset-0 opacity-5">
-            <div className="absolute top-10 right-10 w-32 h-32 rounded-full border-2 border-white"></div>
-            <div className="absolute bottom-10 left-10 w-24 h-24 rounded-full border-2 border-white"></div>
-          </div>
-
-          <CardHeader className="text-center relative z-10 slide-up">
-            <Badge className="bg-accent text-accent-foreground mx-auto mb-4 px-4 py-2">
-              Tratamento Exclusivo
+    <section id="treatments" className="py-10">
+      <div className="container mx-auto px-4 max-w-full overflow-x-hidden">
+        <Card className="rounded-xl border-0 bg-gradient-to-br from-gray-200 via-gray-400 to-green-900 text-card-foreground shadow max-w-5xl mx-auto relative overflow-hidden p-0">
+          <CardHeader className="text-center relative z-10 slide-up pb-2">
+            <Badge className="bg-accent text-accent-foreground mx-auto mb-2 px-4 py-2 flex items-center gap-2">
+              <span role="img" aria-label="microscope">🔬</span> Tratamento em Evidência
             </Badge>
-            <CardTitle className="text-3xl md:text-4xl lg:text-5xl font-light mb-4">
-              PREENCHIMENTO LABIAL
-              <span className="block font-bold">PREMIUM</span>
+            <CardTitle className="text-2xl md:text-3xl font-bold mb-2 text-green-900">
+              Protocolo Face Balance
             </CardTitle>
-            <CardDescription className="text-lg md:text-xl text-primary-foreground/90 max-w-3xl mx-auto leading-relaxed">
-              Técnica exclusiva que combina arte com métodos avançados para criar resultados naturais. 
-              Realçamos o formato natural dos seus lábios mantendo uma aparência sofisticada.
+            <CardDescription className="text-lg md:text-xl text-primary-foreground/90 max-w-3xl mx-auto leading-relaxed mb-4">
+              Harmonia facial em três pilares: estímulo, densidade e sustentação.
             </CardDescription>
           </CardHeader>
 
           <CardContent className="relative z-10">
-            {/* Features Grid */}
-            <div className="grid md:grid-cols-3 gap-8 mb-12">
-              {features.map((feature, index) => (
-                <div 
-                  key={index}
-                  className="text-center fade-in"
-                  style={{ animationDelay: `${(index + 1) * 200}ms` }}
-                >
-                  <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4 text-accent">
-                    {feature.icon}
-                  </div>
-                  <h3 className="text-xl font-semibold mb-3 text-primary-foreground">
-                    {feature.title}
-                  </h3>
-                  <p className="text-primary-foreground/80 leading-relaxed">
-                    {feature.description}
-                  </p>
-                </div>
-              ))}
+
+            {/* Intro Text */}
+            <div className="bg-green-900/10 backdrop-blur-sm rounded-xl p-6 mb-6 text-center">
+              <p className="text-sm text-green-900 max-w-2xl mx-auto">
+  <span className="font-bold">A perda de peso pode impactar negativamente o contorno facial, sobretudo após os 40 anos.</span><br/>
+  <span className="whitespace-nowrap">
+    Este protocolo foi desenvolvido para preservar a estrutura da face com atuação médica criteriosa e resultados naturais.
+  </span>
+</p>
             </div>
 
-            {/* Benefits List */}
-            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-8 mb-8 scale-in">
-              <h3 className="text-2xl font-semibold mb-6 text-center text-primary-foreground">
-                Por que escolher nosso tratamento?
+            {/* Pilares */}
+            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 mb-6">
+              <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
+                <Layers className="w-5 h-5" /> Os Três Pilares do Protocolo
               </h3>
-              <div className="grid md:grid-cols-2 gap-4">
-                {[
-                  "Resultados naturais e duradouros",
-                  "Produtos certificados e seguros", 
-                  "Técnica minimamente invasiva",
-                  "Acompanhamento pós-procedimento",
-                  "Ambiente luxuoso e confortável",
-                  "Profissional altamente qualificada"
-                ].map((benefit, index) => (
-                  <div key={index} className="flex items-center gap-3">
-                    <CheckCircle className="w-5 h-5 text-accent flex-shrink-0" />
-                    <span className="text-primary-foreground/90">{benefit}</span>
-                  </div>
-                ))}
+              <div className="grid md:grid-cols-3 gap-4">
+                <div className="bg-white/5 rounded-lg p-4 flex flex-col items-center">
+                  <div className="font-bold mb-1 whitespace-nowrap">Pilar 1: Estímulo de Colágeno</div>
+                  <img src="/pilar1.png" alt="Estímulo de Colágeno" className="w-12 h-12 mb-2 object-contain" />
+                  <p className="text-center text-sm text-primary-foreground/90">
+                    Prepara a pele para a perda de volume, promovendo elasticidade e vitalidade.
+                  </p>
+                </div>
+                <div className="bg-white/5 rounded-lg p-4 flex flex-col items-center">
+                  <div className="font-bold mb-1 whitespace-nowrap">Pilar 2: Redensificação Dérmica</div>
+                  <img src="/pilar2.png" alt="Redensificação Dérmica" className="w-12 h-12 mb-2 object-contain" />
+                  <p className="text-center text-sm text-primary-foreground/90">
+                    Fortalece as camadas profundas da pele, melhorando firmeza e sustentação.
+                  </p>
+                </div>
+                <div className="bg-white/5 rounded-lg p-4 flex flex-col items-center">
+                  <div className="font-bold mb-1 whitespace-nowrap">Pilar 3: Preenchimento Estratégico</div>
+                  <img src="/pilar3.png" alt="Preenchimento Estratégico" className="w-12 h-12 mb-2 object-contain" />
+                  <p className="text-center text-sm text-primary-foreground/90">
+                    Reposição precisa e controlada de volume, respeitando a anatomia facial.
+                  </p>
+                </div>
               </div>
             </div>
 
-            {/* CTA */}
-            <div className="text-center fade-in delay-800">
-              <Button
-                onClick={scrollToContact}
-                size="lg"
-                className="btn-clinic bg-accent text-accent-foreground hover:bg-accent/90 hover:scale-105 transition-all duration-300 shadow-xl"
-              >
-                Agende Seu Tratamento
-              </Button>
-              <p className="text-sm text-primary-foreground/70 mt-4">
-                Consulta de avaliação sem compromisso
-              </p>
+            {/* Impacto na Pele & Melhor Momento (Side by Side) */}
+            <div className="grid md:grid-cols-2 gap-6 mb-6 w-full">
+              {/* Impacto na Pele */}
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 flex flex-col items-center text-center">
+  <h3 className="text-xl font-semibold mb-4">O que acontece com a pele ao emagrecer?</h3>
+  <img src="/impacto.png" alt="Impacto do emagrecimento na pele" className="h-64 md:h-80 w-auto object-contain rounded-lg shadow mb-2" />
+  <div className="flex items-center gap-2 text-sm mt-2 text-yellow-900 text-primary-foreground/70 justify-center">
+    <AlertTriangle className="w-4 h-4 text-yellow-500" />
+    <span>Especialmente após os 40 anos, o risco é ainda maior.</span>
+  </div>
+</div>
+              {/* Melhor Momento */}
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 flex flex-col items-center text-center">
+  <h3 className="text-xl font-semibold mb-4">Qual o melhor momento para começar</h3>
+  <img src="/momento.png" alt="Melhor momento para começar o tratamento" className="h-64 md:h-80 w-auto object-contain rounded-lg shadow" />
+</div>
             </div>
+
+            {/* Tratamento sob medida (Side by Side) */}
+            <div className="grid md:grid-cols-2 gap-6 mb-6 w-full">
+              {/* Block 1 */}
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-3 flex flex-col items-center text-center h-56 md:h-72">
+  <img src="/detalhe.png" alt="Impacto do emagrecimento na pele" className="h-full w-auto object-contain rounded-lg shadow" />
+</div>
+              {/* Block 2 */}
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-3 flex flex-col items-center text-center">
+  <h3 className="text-xl font-semibold mb-4">Tratamento sob medida</h3>
+  <img src="/pmg.png" alt="Tratamento Sob Medida P–M–G visual 1" className="h-40 md:h-56 w-auto object-contain rounded-lg shadow" />
+</div>
+            </div>
+
+            {/* Avaliação Médica */}
+            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 mb-4 text-center">
+              <h3 className="text-xl font-semibold mb-2 flex items-center gap-2 justify-center">
+                <CheckCircle2 className="w-5 h-5" /> Avaliação Médica
+              </h3>
+              <div className="text-primary-foreground/90 mb-2">
+                Cada protocolo é conduzido pessoalmente pela Dra. Patrícia Paturle, com acompanhamento individualizado e foco na preservação estética da face.
+              </div>
+              <a href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20personalizada" target="_blank" rel="noopener noreferrer">
+                <Button className="mt-2 font-semibold text-base">Agende sua avaliação personalizada</Button>
+              </a>
+            </div>
+
           </CardContent>
         </Card>
       </div>

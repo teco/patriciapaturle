@@ -1,27 +1,27 @@
 import { Badge } from "@/components/ui/badge";
-import { Award, Users, Clock, Heart } from "lucide-react";
+import { Award, Users, Clock, Heart, Palette, MicroscopeIcon, Microscope, HeartHandshake } from "lucide-react";
 
 const AboutSection = () => {
   const achievements = [
     {
-      icon: <Award className="w-8 h-8" />,
-      number: "15+",
-      text: "Anos de Experiência"
-    },
-    {
-      icon: <Users className="w-8 h-8" />,
-      number: "1000+",
-      text: "Pacientes Atendidas"
-    },
-    {
-      icon: <Clock className="w-8 h-8" />,
-      number: "5000+",
-      text: "Procedimentos Realizados"
-    },
-    {
       icon: <Heart className="w-8 h-8" />,
-      number: "98%",
-      text: "Satisfação dos Pacientes"
+      highlight: "Atendimento Exclusivo",
+      text: "Cada procedimento é realizado pessoalmente pela Dra. Patrícia Paturle."
+    },
+    {
+      icon: <Palette className="w-8 h-8" />,
+      highlight: "Foco em Resultados Naturais",
+      text: "Técnicas com precisão para preservar a identidade facial do paciente."
+    },
+    {
+      icon: <Microscope className="w-8 h-8" />,
+      highlight: "Abordagem Científica e Personalizada",
+      text: "Tratamentos baseados em avaliação criteriosa e protocolos exclusivos."
+    },
+    {
+      icon: <HeartHandshake className="w-8 h-8" />,
+      highlight: "Relações de Confiança",
+      text: "Relações construídas com confiança, escuta e acompanhamento contínuo"
     }
   ];
 
@@ -33,12 +33,13 @@ const AboutSection = () => {
           <div className="relative fade-in">
             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
               {/* Placeholder for doctor's photo */}
-              <div className="aspect-[4/5] w-full">
+              <div className="aspect-[4/5] w-full relative">
   <img
     src="/about-photo.jpg"
     alt="Foto da Dra. Patricia Paturle"
     className="w-full h-full object-cover rounded-2xl"
   />
+  <div className="absolute inset-0 bg-black/20 rounded-2xl pointer-events-none"></div>
 </div>
               
               {/* Floating badges */}
@@ -55,32 +56,19 @@ const AboutSection = () => {
           {/* Content Side */}
           <div className="slide-up">
             <Badge className="mb-6 bg-primary text-primary-foreground text-lg md:text-xl lg:text-2xl font-semibold px-6 py-2">
-              Sobre a Especialista
+              Sobre Mim
             </Badge>
             
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-light mb-6 text-foreground">
-              Dra. Patricia
+              Conheça a Dra. Patrícia
               <span className="block font-bold text-primary">Paturle</span>
             </h2>
 
             <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
-              <p>
-                Dermatologista com mais de 15 anos de experiência em cuidados estéticos avançados, 
-                com foco em beleza natural e bem-estar. Formada pela prestigiosa Faculdade de Medicina 
-                da UFMG, com especialização em Dermatologia Estética.
-              </p>
-              
-              <p>
-                Especialista em técnicas minimamente invasivas, sempre priorizando a segurança e 
-                o conforto das pacientes. Acredita que cada rosto é único e merece um tratamento 
-                personalizado que realce a beleza natural.
-              </p>
-
-              <p>
-                Atendimento personalizado com excelência em procedimentos como preenchimento labial, 
-                harmonização facial, skinbooster e tratamentos anti-aging de última geração.
-              </p>
-            </div>
+  <p>Sou médica dermatologista com 25 anos de atuação exclusiva em estética. Formada pela UFMG, com residência médica em Dermatologia pela Santa Casa de BH.</p>
+  <p>Atuo com foco em preenchimentos, estímulo de colágeno e tecnologias avançadas, buscando resultados harmônicos, individualizados e sustentáveis.</p>
+  <p>Além da prática clínica, mantenho constante atualização científica e já participei de diversos estudos, congressos e publicações na área médica.</p>
+</div>
 
             {/* Achievements Grid */}
             <div className="grid grid-cols-2 gap-6 mt-12">
@@ -94,7 +82,7 @@ const AboutSection = () => {
                     {achievement.icon}
                   </div>
                   <div className="text-2xl font-bold text-foreground mb-1">
-                    {achievement.number}
+                    {achievement.highlight}
                   </div>
                   <div className="text-sm text-muted-foreground">
                     {achievement.text}
@@ -108,9 +96,9 @@ const AboutSection = () => {
               <h3 className="text-xl font-semibold mb-4 text-foreground">Formação & Certificações</h3>
               <ul className="space-y-2 text-muted-foreground">
                 <li>• Medicina - Universidade Federal de Minas Gerais (UFMG)</li>
-                <li>• Residência em Dermatologia - Hospital das Clínicas UFMG</li>
-                <li>• Especialização em Dermatologia Estética - SBED</li>
-                <li>• Certificação em Preenchimentos Faciais</li>
+                <li>• Residência em Dermatologia - Hospital das Santa Casa de Belo Horizonte</li>
+                <li>• Especialização em Dermatologia Estética</li>
+                <li>• Membro Titular da Sociedade Brasileira de Dermatologia</li>
               </ul>
             </div>
           </div>
