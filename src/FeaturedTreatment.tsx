@@ -64,34 +64,30 @@ const FeaturedTreatment = () => {
 
             {/* Impacto na Pele & Melhor Momento (Side by Side) */}
             <div className="grid md:grid-cols-2 gap-6 mb-6 w-full">
-              {/* Impacto na Pele */}
-              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 flex flex-col items-center text-center">
-  <h3 className="text-xl font-semibold mb-4">O que acontece com a pele ao emagrecer?</h3>
-  <img src="/impacto.png" alt="Impacto do emagrecimento na pele" className="h-64 md:h-80 w-auto object-contain rounded-lg shadow mb-2" />
-  <div className="flex items-center gap-2 text-sm mt-2 text-yellow-900 text-primary-foreground/70 justify-center">
-    <AlertTriangle className="w-4 h-4 text-yellow-500" />
-    <span>Especialmente após os 40 anos, o risco é ainda maior.</span>
+  {/* Impacto na Pele */}
+  <div className="order-1 md:order-1 bg-white/10 backdrop-blur-sm rounded-xl p-6 flex flex-col items-center text-center">
+    <h3 className="text-xl font-semibold mb-4">O que acontece com a pele ao emagrecer?</h3>
+    <img src="/impacto.png" alt="Impacto do emagrecimento na pele" className="h-64 md:h-80 w-auto object-contain rounded-lg shadow mb-2" />
+    <div className="flex items-center gap-2 text-sm mt-2 text-yellow-900 text-primary-foreground/70 justify-center">
+      <AlertTriangle className="w-4 h-4 text-yellow-500" />
+      <span>Especialmente após os 40 anos, o risco é ainda maior.</span>
+    </div>
+  </div>
+  {/* Melhor Momento */}
+  <div className="order-3 md:order-2 bg-white/10 backdrop-blur-sm rounded-xl p-6 flex flex-col items-center text-center">
+    <h3 className="text-xl font-semibold mb-4">Qual o melhor momento para começar</h3>
+    <img src="/momento.png" alt="Melhor momento para começar o tratamento" className="h-64 md:h-80 w-auto object-contain rounded-lg shadow" />
+  </div>
+  {/* Block 1 (Tratamento sob medida) */}
+  <div className="order-2 md:order-3 bg-white/10 backdrop-blur-sm rounded-xl p-3 flex flex-col items-center text-center h-56 md:h-72">
+    <img src="/detalhe.png" alt="Impacto do emagrecimento na pele" className="h-full w-auto object-contain rounded-lg shadow" />
   </div>
 </div>
-              {/* Melhor Momento */}
-              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 flex flex-col items-center text-center">
-  <h3 className="text-xl font-semibold mb-4">Qual o melhor momento para começar</h3>
-  <img src="/momento.png" alt="Melhor momento para começar o tratamento" className="h-64 md:h-80 w-auto object-contain rounded-lg shadow" />
-</div>
-            </div>
-
-            {/* Tratamento sob medida (Side by Side) */}
-            <div className="grid md:grid-cols-2 gap-6 mb-6 w-full">
-              {/* Block 1 */}
-              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-3 flex flex-col items-center text-center h-56 md:h-72">
-  <img src="/detalhe.png" alt="Impacto do emagrecimento na pele" className="h-full w-auto object-contain rounded-lg shadow" />
-</div>
-              {/* Block 2 */}
-              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-3 flex flex-col items-center text-center">
+{/* Block 2 */}
+<div className="bg-white/10 backdrop-blur-sm rounded-xl p-3 flex flex-col items-center text-center">
   <h3 className="text-xl font-semibold mb-4">Tratamento sob medida</h3>
   <img src="/pmg.png" alt="Tratamento Sob Medida P–M–G visual 1" className="h-40 md:h-56 w-auto object-contain rounded-lg shadow" />
 </div>
-            </div>
 
             {/* Avaliação Médica */}
             <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 mb-4 text-center">
