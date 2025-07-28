@@ -47,22 +47,22 @@ const BlogSection = () => {
     <section id="blog" className="py-10 bg-background">
       <div className="container mx-auto px-4">
         {/* Header */}
-        <div className="text-center mb-16 fade-in">
-          <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
-            <BookOpen className="w-8 h-8 text-primary" />
+        <div className="text-center mb-12 sm:mb-16 fade-in px-4">
+          <div className="w-14 h-14 sm:w-16 sm:h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6">
+            <BookOpen className="w-6 h-6 sm:w-8 sm:h-8 text-primary" />
           </div>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-light mb-6 text-foreground">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light mb-4 sm:mb-6 text-foreground">
             Dicas &
             <span className="block font-bold text-primary">Artigos</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Compartilhamos conhecimento e dicas valiosas sobre cuidados estéticos, 
             procedimentos e tendências em dermatologia
           </p>
         </div>
 
         {/* Featured Posts */}
-        <div className="grid lg:grid-cols-2 gap-8 mb-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 xs:gap-6 sm:gap-8 mb-8 sm:mb-12">
           {blogPosts.filter(post => post.featured).map((post, index) => (
             <Card 
               key={post.id}
@@ -118,7 +118,7 @@ const BlogSection = () => {
         </div>
 
         {/* Recent Posts Grid */}
-        <div className="grid md:grid-cols-2 gap-6 mb-12">
+        <div className="grid sm:grid-cols-2 gap-4 sm:gap-6 mb-8 sm:mb-12">
           {blogPosts.filter(post => !post.featured).map((post, index) => (
             <Card 
               key={post.id}

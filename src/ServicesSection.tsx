@@ -1,4 +1,3 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Sparkles, Droplets, RefreshCw, Zap, Star, ShieldCheck } from "lucide-react";
 
@@ -65,79 +64,64 @@ const ServicesSection = () => {
     <section id="services" className="py-10 bg-background">
       <div className="container mx-auto px-4">
         {/* Header */}
-        <div className="text-center mb-16 fade-in">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-light mb-6 text-foreground">
+        <div className="text-center mb-12 sm:mb-16 fade-in px-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light mb-4 sm:mb-6 text-foreground">
             Nossos
             <span className="block font-bold text-primary">Serviços</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Oferecemos uma ampla gama de tratamentos estéticos avançados, 
             sempre com foco na sua segurança e satisfação
           </p>
         </div>
 
         {/* Services Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 px-4 sm:px-6 mb-12 sm:mb-16">
           {services.map((service, index) => (
-            <Card 
-              key={index}
-              className="clinic-card group hover:shadow-elegant transition-all duration-500 slide-up"
-              style={{ animationDelay: `${index * 150}ms` }}
-            >
-              <CardHeader className="text-center">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
+            <div key={index} className="p-4 md:p-6 bg-white rounded-lg shadow-md text-center break-words hyphens-auto min-h-[280px] flex flex-col justify-between">
+              <div className="flex-grow">
+                <div className="text-primary mb-4 flex justify-center">
                   {service.icon}
                 </div>
-                <CardTitle className="text-xl font-semibold text-foreground group-hover:text-primary transition-colors duration-300">
-                  {service.title}
-                </CardTitle>
-                <CardDescription className="text-muted-foreground leading-relaxed">
-                  {service.description}
-                </CardDescription>
-              </CardHeader>
-
-              <CardContent className="space-y-4">
-                {/* Features */}
-                <div className="space-y-2">
-                  <h4 className="font-medium text-foreground text-sm">Inclui:</h4>
-                  <ul className="space-y-1">
-                    {service.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="text-sm text-muted-foreground flex items-center gap-2">
-                        <div className="w-1.5 h-1.5 bg-primary rounded-full"></div>
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
+                <h3 className="text-lg md:text-xl font-bold mb-3 text-foreground hyphens-auto break-words">{service.title}</h3>
+                <p className="text-sm md:text-base text-muted-foreground mb-4 hyphens-auto break-words leading-relaxed">{service.description}</p>
+                <div className="space-y-2 mb-4">
+                  {service.features.map((feature, idx) => (
+                    <div key={idx} className="text-xs md:text-sm text-muted-foreground hyphens-auto break-words">
+                      • {feature}
+                    </div>
+                  ))}
                 </div>
-
-                {/* Details */}
-                <div className="grid grid-cols-2 gap-4 pt-4 border-t border-border">
-                  <div>
-                    <div className="text-xs text-muted-foreground">Duração</div>
-                    <div className="text-sm font-medium text-foreground">{service.duration}</div>
-                  </div>
-                  <div>
-                    <div className="text-xs text-muted-foreground">Preço</div>
-                    <div className="text-sm font-medium text-primary">{service.price}</div>
-                  </div>
+                <div className="text-xs md:text-sm text-muted-foreground mb-2">
+                  <span className="font-medium">Duração:</span> {service.duration}
                 </div>
-              </CardContent>
-            </Card>
+                <div className="text-sm md:text-base font-semibold text-primary mb-4">
+                  {service.price}
+                </div>
+              </div>
+              <Button 
+                className="mt-auto bg-primary text-primary-foreground hover:bg-primary/90 py-2 px-4 rounded min-h-[48px] w-full"
+                aria-label={`Saiba mais sobre ${service.title}`}
+              >
+                Saiba Mais
+              </Button>
+            </div>
           ))}
         </div>
 
         {/* CTA Section */}
-        <div className="text-center bg-gradient-primary rounded-2xl p-12 text-primary fade-in">
-          <h3 className="text-2xl md:text-3xl font-light mb-4">
+        <div className="text-center bg-gradient-primary rounded-2xl p-6 md:p-8 lg:p-12 text-primary fade-in">
+          <h3 className="text-xl md:text-2xl lg:text-3xl font-light mb-4 hyphens-auto break-words">
             Não encontrou o tratamento que procura?
           </h3>
-          <p className="text-lg opacity-90 mb-8 max-w-2xl mx-auto">
+          <p className="text-base md:text-lg opacity-90 mb-6 md:mb-8 max-w-2xl mx-auto hyphens-auto break-words leading-relaxed">
             Oferecemos consultas personalizadas para criar o plano de tratamento ideal para você
           </p>
           <Button
             onClick={scrollToContact}
             size="lg"
-            className="btn-clinic bg-accent text-accent-foreground hover:bg-accent/90"
+            className="btn-clinic bg-accent text-accent-foreground hover:bg-accent/90 min-h-[48px] px-6 py-3"
+            aria-label="Agendar consulta personalizada via WhatsApp"
           >
             Agende uma Consulta
           </Button>

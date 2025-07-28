@@ -1,7 +1,6 @@
 import { useState } from "react";
 // Assuming these are imported from your shadcn/ui setup
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { ChevronDown, ChevronUp, HelpCircle } from "lucide-react";
+import { HelpCircle, ChevronDown } from "lucide-react";
 // If using shadcn Accordion:
 // import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
 
@@ -51,81 +50,61 @@ const FAQSection = () => {
     <section id="faq" className="py-10 bg-muted">
       <div className="container mx-auto px-4">
         {/* Header */}
-        <div className="text-center mb-16 fade-in">
+        <div className="text-center mb-12 sm:mb-16 fade-in px-4">
           <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
             <HelpCircle className="w-8 h-8 text-primary" />
           </div>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-light mb-6 text-foreground">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light mb-4 sm:mb-6 text-foreground">
             Perguntas
             <span className="block font-bold text-primary">Frequentes</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Esclarecemos as principais dúvidas sobre nossos tratamentos. 
             Não encontrou sua pergunta? Entre em contato conosco!
           </p>
         </div>
 
-        {/* FAQ Cards (Custom Accordion Example - replace with Shadcn Accordion for best practice) */}
-        {/* To use Shadcn Accordion, uncomment the import above and replace this div with:
-            <Accordion type="single" collapsible value={faqs[openIndex]?.question || faqs[0].question}>
-                {faqs.map((faq, index) => (
-                    <AccordionItem key={index} value={faq.question}>
-                        <AccordionTrigger>{faq.question}</AccordionTrigger>
-                        <AccordionContent>
-                            <p className="text-muted-foreground leading-relaxed">{faq.answer}</p>
-                        </AccordionContent>
-                    </AccordionItem>
-                ))}
-            </Accordion>
-        */}
-        <div className="max-w-4xl mx-auto space-y-4">
-          {faqs.map((faq, index) => (
-            <Card 
-              key={index}
-              className="clinic-card slide-up cursor-pointer hover:shadow-lg transition-all duration-300"
-              style={{ animationDelay: `${index * 100}ms` }}
-              onClick={() => toggleFAQ(index)}
-            >
-              <CardHeader className="pb-4">
-                <CardTitle className="flex items-center justify-between text-lg text-foreground">
-                  <span className="pr-4">{faq.question}</span>
-                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
-                    {openIndex === index ? (
-                      <ChevronUp className="w-5 h-5 text-primary" />
-                    ) : (
-                      <ChevronDown className="w-5 h-5 text-primary" />
-                    )}
+        {/* FAQ Accordion using Radix UI */}
+        <div className="w-full max-w-2xl md:max-w-3xl mx-auto px-4">
+          <div className="space-y-2 md:space-y-4">
+            {faqs.map((faq, index) => (
+              <div key={index} className="border border-border rounded-lg bg-white shadow-sm">
+                <button 
+                  className="w-full p-4 md:p-6 flex justify-between items-center text-left min-h-[48px] hover:bg-muted/50 transition-colors duration-200 rounded-lg" 
+                  aria-label={`${openIndex === index ? 'Fechar' : 'Expandir'} pergunta: ${faq.question}`}
+                  aria-expanded={openIndex === index}
+                  onClick={() => toggleFAQ(index)}
+                >
+                  <span className="text-sm md:text-base lg:text-lg font-medium text-foreground hyphens-auto break-words pr-4 leading-relaxed">{faq.question}</span>
+                  <ChevronDown className={`w-5 h-5 md:w-6 md:h-6 text-primary transition-transform duration-200 flex-shrink-0 ${openIndex === index ? 'rotate-180' : ''}`} />
+                </button>
+                {openIndex === index && (
+                  <div className="px-4 md:px-6 pb-4 md:pb-6 pt-0">
+                    <div className="border-t border-border pt-4">
+                      <p className="text-sm md:text-base text-muted-foreground leading-relaxed hyphens-auto break-words">{faq.answer}</p>
+                    </div>
                   </div>
-                </CardTitle>
-              </CardHeader>
-
-              {openIndex === index && (
-                <CardContent className="pt-0">
-                  <div className="border-t border-border pt-4">
-                    <p className="text-muted-foreground leading-relaxed">
-                      {faq.answer}
-                    </p>
-                  </div>
-                </CardContent>
-              )}
-            </Card>
-          ))}
+                )}
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* Additional Help */}
-        <div className="text-center mt-16 fade-in">
-          <div className="bg-white rounded-2xl p-8 max-w-2xl mx-auto shadow-md">
-            <h3 className="text-2xl font-semibold mb-4 text-foreground">
+        <div className="text-center mt-12 md:mt-16 fade-in px-4">
+          <div className="bg-white rounded-2xl p-6 md:p-8 max-w-2xl mx-auto shadow-md">
+            <h3 className="text-xl md:text-2xl font-semibold mb-4 text-foreground hyphens-auto break-words">
               Ainda tem dúvidas?
             </h3>
-            <p className="text-muted-foreground mb-6">
+            <p className="text-sm md:text-base text-muted-foreground mb-6 hyphens-auto break-words leading-relaxed">
               Nossa equipe está sempre disponível para esclarecer todas as suas questões 
               e ajudar você a escolher o melhor tratamento.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
               <a 
                 href="tel:+5531999999999"
-                className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-primary text-primary-foreground hover:bg-primary/90 transition-colors duration-200"
+                className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-primary text-primary-foreground hover:bg-primary/90 transition-colors duration-200 min-h-[48px] text-sm md:text-base font-medium"
+                aria-label="Ligar para (31) 99999-9999"
               >
                 📞 (31) 99999-9999
               </a>
@@ -133,7 +112,8 @@ const FAQSection = () => {
                 href="https://wa.me/5531999999999"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-primary text-primary-foreground hover:bg-primary/90 transition-colors duration-200"
+                className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-primary text-primary-foreground hover:bg-primary/90 transition-colors duration-200 min-h-[48px] text-sm md:text-base font-medium"
+                aria-label="Entrar em contato via WhatsApp"
               >
                 💬 WhatsApp
               </a>

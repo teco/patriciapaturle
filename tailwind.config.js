@@ -7,6 +7,12 @@ export default {
   ],
   theme: {
   	extend: {
+  		screens: {
+  			'xs': '475px', // For ultra-small mobile tweaks
+  		},
+  		spacing: {
+  			'mobile': '1rem', // Use like p-mobile for consistent mobile padding
+  		},
   		borderRadius: {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
@@ -75,6 +81,9 @@ export default {
   		}
   	}
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [
+    require("tailwindcss-animate"),
+    require("@tailwindcss/typography"),
+  ],
 }
 
