@@ -23,17 +23,17 @@ const HeroSection = () => {
     >
       {/* Background Image - Added bg-no-repeat bg-cover via class; ensure /hero-bg.jpg is in public/ */}
       <img
-        src="/hero-bg.jpg"
+        src="/hero-bg.png"
         alt="Background da Clínica Patricia Paturle"
-        className="absolute inset-0 w-full h-full object-cover opacity-10 pointer-events-none select-none bg-no-repeat bg-cover"
+        className="absolute inset-0 w-full h-full object-cover opacity-35 pointer-events-none select-none bg-no-repeat bg-cover"
         style={{ zIndex: 0 }}
       />
 
       {/* Background Decoration - Kept, but added responsive scaling if needed */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-20 left-20 w-32 h-32 rounded-full bg-white/20 animate-pulse hidden sm:block"></div> {/* Hide on xs for cleaner mobile */}
-        <div className="absolute bottom-32 right-16 w-24 h-24 rounded-full bg-white/15 animate-pulse delay-1000 hidden sm:block"></div>
-        <div className="absolute top-1/2 right-1/4 w-16 h-16 rounded-full bg-white/25 animate-pulse delay-500 hidden sm:block"></div>
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute top-20 left-20 w-32 h-32 rounded-full bg-white/10 animate-pulse hidden sm:block" style={{ animationDuration: '4s' }}></div>
+        <div className="absolute bottom-32 right-16 w-24 h-24 rounded-full bg-white/8 animate-pulse delay-1000 hidden sm:block" style={{ animationDuration: '5s' }}></div>
+        <div className="absolute top-1/2 right-1/4 w-16 h-16 rounded-full bg-white/12 animate-pulse delay-500 hidden sm:block" style={{ animationDuration: '6s' }}></div>
       </div>
 
       <div className="container mx-auto px-4 text-center relative z-10 hyphens-auto"> {/* Added hyphens-auto for word breaks */}
@@ -52,7 +52,7 @@ const HeroSection = () => {
 
           {/* Subtitle - Responsive fonts, hyphens-auto inherited */}
           <div className="mb-4 max-w-3xl mx-auto text-center fade-in delay-400">
-            <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-primary mb-2">
+            <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold text-primary mb-2" style={{ wordBreak: 'keep-all', hyphens: 'none', overflowWrap: 'normal' }}>
               <strong>Técnica refinada. Olhar apurado. Resultados naturais.</strong>
             </h2>
             <p className="text-base sm:text-lg md:text-xl opacity-90 leading-relaxed text-primary">

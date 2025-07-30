@@ -11,7 +11,7 @@ const Navigation: React.FC = () => {
         {/* Desktop Menu */}
         <ul className="hidden md:flex space-x-6">
           <li><a href="#home" className="hover:text-primary transition-colors duration-200">Início</a></li>
-          <li><a href="#services" className="hover:text-primary transition-colors duration-200">Serviços</a></li>
+          <li><a href="#services" className="hover:text-primary transition-colors duration-200">Tratamentos</a></li>
           <li><a href="#about" className="hover:text-primary transition-colors duration-200">Sobre</a></li>
           <li><a href="#faq" className="hover:text-primary transition-colors duration-200">FAQ</a></li>
           <li><a href="#blog" className="hover:text-primary transition-colors duration-200">Blog</a></li>
@@ -34,7 +34,7 @@ const Navigation: React.FC = () => {
       }`}>
         <ul className="flex flex-col space-y-4 px-4 py-4 bg-white items-center border-t border-gray-100">
           <li><a href="#home" className="block hover:text-primary active:text-primary transition-colors duration-200 py-2" onClick={() => setIsOpen(false)}>Início</a></li>
-          <li><a href="#services" className="block hover:text-primary active:text-primary transition-colors duration-200 py-2" onClick={() => setIsOpen(false)}>Serviços</a></li>
+          <li><a href="#services" className="block hover:text-primary active:text-primary transition-colors duration-200 py-2" onClick={() => setIsOpen(false)}>Tratamentos</a></li>
           <li><a href="#about" className="block hover:text-primary active:text-primary transition-colors duration-200 py-2" onClick={() => setIsOpen(false)}>Sobre</a></li>
           <li><a href="#faq" className="block hover:text-primary active:text-primary transition-colors duration-200 py-2" onClick={() => setIsOpen(false)}>FAQ</a></li>
           <li><a href="#blog" className="block hover:text-primary active:text-primary transition-colors duration-200 py-2" onClick={() => setIsOpen(false)}>Blog</a></li>

@@ -28,25 +28,36 @@ const AboutSection = () => {
   return (
     <section id="about" className="py-10 bg-muted">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
           {/* Image Side */}
           <div className="relative fade-in">
             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
               {/* Placeholder for doctor's photo */}
               <div className="aspect-[4/5] w-full relative">
-  <img
-    src="/aboutphoto.jpg"
-    alt="Foto da Dra. Patricia Paturle"
-    className="w-full h-full object-cover rounded-2xl"
-  />
-  <div className="absolute inset-0 bg-black/20 rounded-2xl pointer-events-none"></div>
-</div>
+                <img
+                  src="/aboutphoto.jpg"
+                  alt="Foto da Dra. Patricia Paturle"
+                  className="w-full h-full object-cover rounded-2xl"
+                />
+                <div className="absolute inset-0 bg-black/20 rounded-2xl pointer-events-none"></div>
+              </div>
               
               {/* Floating badges */}
               <div className="absolute -bottom-4 -left-2 bg-white text-foreground rounded-xl p-4 shadow-lg">
                 <div className="text-sm font-medium">CRM: 34274</div>
                 <div className="text-xs text-muted-foreground">Dermatologista</div>
               </div>
+            </div>
+            
+            {/* Certifications - Hidden on mobile, shown under image on desktop */}
+            <div className="hidden lg:block mt-6 md:mt-8 p-4 md:p-6 bg-white rounded-xl shadow-md">
+              <h3 className="text-lg md:text-xl font-semibold mb-4 text-foreground hyphens-auto break-words">Formação & Certificações</h3>
+              <ul className="space-y-2 md:space-y-3 text-sm md:text-base text-muted-foreground leading-relaxed">
+                <li className="hyphens-auto break-words">• Medicina - Universidade Federal de Minas Gerais (UFMG)</li>
+                <li className="hyphens-auto break-words">• Residência em Dermatologia - Hospital das Santa Casa de Belo Horizonte</li>
+                <li className="hyphens-auto break-words">• Especialização em Dermatologia Estética</li>
+                <li className="hyphens-auto break-words">• Membro Titular da Sociedade Brasileira de Dermatologia</li>
+              </ul>
             </div>
           </div>
 
@@ -88,8 +99,8 @@ const AboutSection = () => {
               ))}
             </div>
 
-            {/* Certifications */}
-            <div className="mt-6 md:mt-8 p-4 md:p-6 bg-white rounded-xl shadow-md">
+            {/* Certifications - Shown on mobile/tablet, hidden on desktop */}
+            <div className="lg:hidden mt-6 md:mt-8 p-4 md:p-6 bg-white rounded-xl shadow-md">
               <h3 className="text-lg md:text-xl font-semibold mb-4 text-foreground hyphens-auto break-words">Formação & Certificações</h3>
               <ul className="space-y-2 md:space-y-3 text-sm md:text-base text-muted-foreground leading-relaxed">
                 <li className="hyphens-auto break-words">• Medicina - Universidade Federal de Minas Gerais (UFMG)</li>

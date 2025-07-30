@@ -9,36 +9,79 @@ const FAQSection = () => {
 
   const faqs = [
     {
+      question: "Quais são os benefícios reais dos tratamentos estéticos?",
+      answer:
+        "Os principais benefícios incluem: melhora da textura da pele, redução de rugas e flacidez, uniformização do tom, estímulo de colágeno, tratamento de manchas, definição facial e corporal, e prevenção de sinais do envelhecimento. O resultado é mais autoestima, segurança e leveza ao se olhar no espelho — sem perder sua naturalidade."
+    },
+    {
+      question: "Quais são os tratamentos mais procurados?",
+      answer:
+        "Toxina botulínica (Botox), preenchimento com ácido hialurônico, bioestimuladores de colágeno (Sculptra), Ultraformer, fios de sustentação, peelings, Volnewmer, lipo enzimática, clareamento de pele e terapias capilares estão entre os mais solicitados. Durante a avaliação, identificamos as combinações ideais para seu caso."
+    },
+    {
+      question: "Com que idade posso começar a cuidar da pele esteticamente?",
+      answer:
+        "Cuidados preventivos podem começar por volta dos 25 anos, com foco em hidratação, estímulo de colágeno e prevenção de rugas dinâmicas. Já tratamentos mais estruturais, como preenchimentos ou bioestimuladores, são indicados de acordo com avaliação médica, não por idade fixa."
+    },
+    {
+      question: "Qual a diferença entre dermatologista estético e cirurgião plástico?",
+      answer:
+        "O dermatologista atua com foco total na saúde e estética da pele, oferecendo soluções não cirúrgicas (lasers, injetáveis, peelings). O cirurgião plástico tem formação voltada para cirurgias estéticas e reconstrutivas. Ambos podem realizar procedimentos estéticos, mas o dermatologista é especialista na harmonização facial e nos cuidados clínicos da pele."
+    },
+    {
+      question: "Qual é a duração média dos resultados?",
+      answer:
+        "Toxina botulínica dura de 3 a 6 meses. Preenchedores, de 9 a 18 meses. Sculptra pode durar até 2 anos. Ultraformer e Volnewmer têm efeito acumulativo, com resultados visíveis entre 6 e 24 meses. A manutenção varia conforme metabolismo, estilo de vida e plano de tratamento."
+    },
+    {
       question: "Os tratamentos causam dor?",
-      answer: "A maioria dos tratamentos utiliza anestésicos tópicos e são bem tolerados pelos pacientes. Utilizamos técnicas minimamente invasivas e produtos de alta qualidade para garantir o máximo conforto durante o procedimento. Sempre discutimos o nível de desconforto esperado antes de iniciar qualquer tratamento."
+      answer:
+        "A maioria dos tratamentos utiliza anestésicos tópicos e são bem tolerados pelos pacientes. Utilizamos técnicas minimamente invasivas e produtos de alta qualidade para garantir o máximo conforto durante o procedimento. Sempre discutimos o nível de desconforto esperado antes de iniciar qualquer tratamento."
     },
     {
-      question: "Quanto tempo dura o resultado dos preenchimentos?",
-      answer: "O tempo de duração varia conforme o tipo de procedimento e as características individuais. Os preenchimentos labiais geralmente duram de 6 a 12 meses, enquanto a harmonização facial pode durar de 12 a 18 meses. Durante a consulta, explicamos detalhadamente a durabilidade esperada para cada caso específico."
+      question: "Como me preparo para os tratamentos? E os cuidados depois?",
+      answer:
+        "Antes do procedimento, orientamos sobre suspensão de medicações e uso de produtos preparatórios (como retinoides ou clareadores, se necessário). Após o tratamento, indicamos uso de protetor solar, hidratação intensa e evitar sol, maquiagem ou esforço físico, conforme o caso. Todos os cuidados são entregues por escrito e reforçados na consulta."
     },
     {
-      question: "Qual é o tempo de recuperação?",
-      answer: "A maioria dos nossos tratamentos permite retorno às atividades normais no mesmo dia. Pode haver inchaço leve e vermelhidão nas primeiras 24-48 horas, mas isso é completamente normal. Fornecemos instruções detalhadas de cuidados pós-procedimento para otimizar a recuperação."
+      question: "É seguro fazer procedimentos em clínicas não médicas?",
+      answer:
+        "Não. Procedimentos estéticos envolvem riscos e devem ser realizados por médicos. Profissionais não médicos não têm formação para lidar com anatomia facial, medicamentos injetáveis ou eventuais complicações. Isso aumenta o risco de assimetrias, necrose, infecções e até cegueira. Segurança e resultados naturais só se alcançam com especialistas."
     },
     {
-      question: "Como devo me preparar para o procedimento?",
-      answer: "Recomendamos evitar medicamentos anticoagulantes, álcool e exercícios intensos 24-48 horas antes do procedimento. É importante chegar sem maquiagem na área a ser tratada. Durante a consulta inicial, fornecemos uma lista completa de preparativos específicos para seu tratamento."
+      question: "Com que frequência devo repetir os tratamentos?",
+      answer:
+        "Depende do tratamento e do objetivo. Botox: a cada 4 a 6 meses. Preenchedores: de 9 a 18 meses. Bioestimuladores: 1 a 2 vezes por ano. Procedimentos como Ultraformer, Volnewmer e peelings variam entre 30 a 90 dias por sessão, com manutenção periódica."
     },
     {
-      question: "Os resultados ficam naturais?",
-      answer: "Sim! Nossa filosofia é sempre priorizar resultados naturais que realcem sua beleza única. Utilizamos técnicas avançadas e uma abordagem artística para criar resultados harmoniosos que respeitam suas características faciais naturais. O objetivo é que você se sinta mais bonita e confiante, não artificialmente modificada."
+      question: "A clínica oferece consulta personalizada?",
+      answer:
+        "Sim. A consulta é o ponto de partida. Avaliamos seu rosto, pele, estilo de vida e expectativas. Explicamos as melhores opções, os limites de cada técnica e criamos um plano progressivo e natural. Transparência, segurança e escuta ativa são pilares do atendimento."
     },
     {
-      question: "Quando posso ver os resultados finais?",
-      answer: "Os resultados iniciais são visíveis imediatamente, mas o resultado final pode ser avaliado após 2-4 semanas, quando o inchaço inicial diminui completamente. Alguns tratamentos, como skinbooster, mostram melhora progressiva ao longo de 2-3 meses devido ao estímulo natural de colágeno."
+      question: "O que é o Sculptra e para quem ele é indicado?",
+      answer:
+        "O Sculptra é um bioestimulador que ativa a produção natural de colágeno, promovendo firmeza, elasticidade e melhora global da qualidade da pele. Indicado para quem deseja reestruturar o volume facial ou corporal de forma gradual, com efeito lifting natural e sem exageros. Os resultados aparecem em semanas e duram até 2 anos."
     },
     {
-      question: "Preciso fazer retoque?",
-      answer: "Isso varia de pessoa para pessoa e do tipo de tratamento. Alguns pacientes ficam completamente satisfeitos com o resultado inicial, enquanto outros preferem um retoque para ajustes finos. Oferecemos acompanhamento pós-procedimento e, quando necessário, retoques são realizados sem custo adicional dentro de 30 dias."
+      question: "O que diferencia o Ultraformer de outros tratamentos?",
+      answer:
+        "O Ultraformer é um ultrassom micro e macrofocado que atua profundamente na pele, atingindo camadas que só a cirurgia acessaria. Ele promove lifting, firmeza e redução de gordura localizada leve, com efeito progressivo e duradouro. Indicado para rosto, pescoço, colo e corpo — sem cortes ou tempo de recuperação."
     },
     {
-      question: "Qual a diferença entre os produtos utilizados?",
-      answer: "Utilizamos apenas produtos de marcas renomadas e aprovados pela ANVISA. Cada produto tem características específicas: densidade, durabilidade e indicações diferentes. Durante a consulta, explicamos qual produto é mais indicado para seu caso específico, sempre priorizando segurança e resultados superiores."
+      question: "O que é o Volnewmer?",
+      answer:
+        "O Volnewmer é um tratamento que combina radiofrequência e microagulhamento para renovar a pele de dentro para fora. Trata rugas, flacidez, poros dilatados, cicatrizes e estrias. Estimula colágeno, elastina e ácido hialurônico, melhorando textura e promovendo firmeza. Ideal para quem busca resultados reais com pouco downtime."
+    },
+    {
+      question: "O que é terapia capilar com exossomos?",
+      answer:
+        "A terapia com exossomos é uma inovação no tratamento da queda de cabelo. Os exossomos são partículas regenerativas extraídas de células-tronco que estimulam diretamente o folículo capilar. Quando aplicados no couro cabeludo, promovem crescimento mais rápido, fios mais espessos e prolongam a fase de crescimento."
+    },
+    {
+      question: "Tratamentos estéticos deixam o rosto artificial?",
+      answer:
+        "Não quando feitos por profissionais qualificados. A proposta da dermatologia estética moderna é valorizar sua beleza natural, corrigir desequilíbrios e prevenir sinais de envelhecimento — sem exageros. A harmonização bem executada devolve frescor e simetria, sem que ninguém perceba o que foi feito — só que você está melhor."
     }
   ];
 
@@ -64,25 +107,23 @@ const FAQSection = () => {
           </p>
         </div>
 
-        {/* FAQ Accordion using Radix UI */}
+        {/* FAQ Accordion - Minimal Design */}
         <div className="w-full max-w-2xl md:max-w-3xl mx-auto px-4">
-          <div className="space-y-2 md:space-y-4">
+          <div className="space-y-6 md:space-y-8">
             {faqs.map((faq, index) => (
-              <div key={index} className="border border-border rounded-lg bg-white shadow-sm">
+              <div key={index}>
                 <button 
-                  className="w-full p-4 md:p-6 flex justify-between items-center text-left min-h-[48px] hover:bg-muted/50 transition-colors duration-200 rounded-lg" 
+                  className="w-full flex justify-between items-center text-left min-h-[48px] hover:opacity-80 transition-opacity duration-200" 
                   aria-label={`${openIndex === index ? 'Fechar' : 'Expandir'} pergunta: ${faq.question}`}
                   aria-expanded={openIndex === index}
                   onClick={() => toggleFAQ(index)}
                 >
-                  <span className="text-sm md:text-base lg:text-lg font-medium text-foreground hyphens-auto break-words pr-4 leading-relaxed">{faq.question}</span>
+                  <span className="text-base md:text-lg lg:text-xl font-medium text-foreground pr-4 leading-relaxed">{faq.question}</span>
                   <ChevronDown className={`w-5 h-5 md:w-6 md:h-6 text-primary transition-transform duration-200 flex-shrink-0 ${openIndex === index ? 'rotate-180' : ''}`} />
                 </button>
                 {openIndex === index && (
-                  <div className="px-4 md:px-6 pb-4 md:pb-6 pt-0">
-                    <div className="border-t border-border pt-4">
-                      <p className="text-sm md:text-base text-muted-foreground leading-relaxed hyphens-auto break-words">{faq.answer}</p>
-                    </div>
+                  <div className="mt-4 pl-0">
+                    <p className="text-sm md:text-base text-muted-foreground leading-relaxed">{faq.answer}</p>
                   </div>
                 )}
               </div>
@@ -102,20 +143,20 @@ const FAQSection = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
               <a 
-                href="tel:+5531999999999"
+                href="tel:+553132644866"
                 className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-primary text-primary-foreground hover:bg-primary/90 transition-colors duration-200 min-h-[48px] text-sm md:text-base font-medium"
-                aria-label="Ligar para (31) 99999-9999"
+                aria-label="Ligar para (31) 3264-4866"
               >
-                📞 (31) 99999-9999
+                (31) 3264-4866
               </a>
               <a 
-                href="https://wa.me/5531999999999"
+                href="https://wa.me/5531999474866"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-primary text-primary-foreground hover:bg-primary/90 transition-colors duration-200 min-h-[48px] text-sm md:text-base font-medium"
                 aria-label="Entrar em contato via WhatsApp"
               >
-                💬 WhatsApp
+                WhatsApp
               </a>
             </div>
           </div>

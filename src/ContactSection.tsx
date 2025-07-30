@@ -21,25 +21,25 @@ const ContactSection = () => {
     {
       icon: <Phone className="w-6 h-6" />,
       title: "Telefone",
-      content: "(31) 99999-9999",
-      link: "tel:+5531999999999"
+      content: "(31) 99947-4866",
+      link: "tel:+5531999474866"
     },
     {
       icon: <Mail className="w-6 h-6" />,
       title: "Email",
-      content: "contato@patriciapaturle.com",
-      link: "mailto:contato@patriciapaturle.com"
+      content: "contato@patriciapaturle.com.br",
+      link: "mailto:contato@patriciapaturle.com.br"
     },
     {
       icon: <MapPin className="w-6 h-6" />,
       title: "Localização",
-      content: "Rua Exemplo, 123 – Belo Horizonte – MG",
-      link: "https://maps.google.com"
+      content: "Avenida Getúlio Vargas, 1671/3º andar – Belo Horizonte – MG",
+      link: "https://maps.app.goo.gl/sMk2ZBmbRhfQkWCf9?g_st=ipc"
     },
     {
       icon: <Clock className="w-6 h-6" />,
       title: "Horário",
-      content: "Seg - Sex: 8h às 18h | Sáb: 8h às 12h",
+      content: "Seg - Sex: 8h às 18h",
       link: null
     }
   ];
@@ -188,14 +188,22 @@ const ContactSection = () => {
                     aria-describedby="treatment-help"
                   >
                     <option value="">Selecione um tratamento</option>
-                    <option value="preenchimento-labial">Preenchimento Labial</option>
-                    <option value="harmonizacao-facial">Harmonização Facial</option>
-                    <option value="skinbooster">Skinbooster</option>
-                    <option value="peeling">Peeling Químico</option>
-                    <option value="botox">Botox</option>
-                    <option value="fios-pdo">Fios de PDO</option>
-                    <option value="laser">Laser Facial</option>
-                    <option value="consulta">Apenas Consulta</option>
+                    <option value="toxina-botulinica">Toxina Botulínica (Botox)</option>
+                    <option value="preenchimento-acido-hialuronico">Preenchimento com Ácido Hialurônico</option>
+                    <option value="fios-sustentacao">Fios de Sustentação</option>
+                    <option value="ultraformer">Ultraformer (Ultrassom Micro e Macrofocado)</option>
+                    <option value="volnewmer">Volnewmer (Laser Fracionado)</option>
+                    <option value="campo-eletromagnetico">Campo Eletromagnético</option>
+                    <option value="scizer">Scizer (Ultrassom para Gordura Localizada)</option>
+                    <option value="luz-intensa-pulsada">Luz Intensa Pulsada (LIP)</option>
+                    <option value="lipo-enzimatica">Lipo Enzimática</option>
+                    <option value="terapia-capilar">Terapia Capilar</option>
+                    <option value="peeling-coreano">Peeling Coreano Lhala Peel</option>
+                    <option value="clareamento-pele">Clareamento de Pele</option>
+                    <option value="tratamento-estrias">Tratamento para Estrias</option>
+                    <option value="sculptra">Bioestimulador de Colágeno (Sculptra)</option>
+                    <option value="apenas-avaliacao">Apenas Avaliação</option>
+                    <option value="apenas-consulta">Apenas Consulta</option>
                   </select>
                 </div>
 
@@ -283,7 +291,7 @@ const ContactSection = () => {
               <CardContent className="p-4 md:p-6 pt-0">
                 <div className="flex gap-3 md:gap-4">
                   <a 
-                    href="https://instagram.com/SEUINSTAGRAM"
+                    href="https://instagram.com/patriciapaturle"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center justify-center min-w-[48px] min-h-[48px] w-12 h-12 md:w-14 md:h-14 bg-primary/10 text-primary rounded-full hover:bg-primary/20 hover:scale-110 transition-transform duration-200"
@@ -292,7 +300,7 @@ const ContactSection = () => {
                     <Instagram className="w-5 h-5 md:w-6 md:h-6" />
                   </a>
                   <a 
-                    href="https://wa.me/55SEUNUMERO"
+                    href="https://wa.me/5531999474866"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center justify-center min-w-[48px] min-h-[48px] w-12 h-12 md:w-14 md:h-14 bg-primary/10 text-primary rounded-full hover:bg-primary/20 hover:scale-110 transition-transform duration-200"
@@ -313,15 +321,15 @@ const ContactSection = () => {
                 </p>
                 <div className="space-y-3">
                   <a 
-                    href="tel:+5531999999999"
+                    href="tel:+5531999474866"
                     className="flex items-center gap-3 p-3 bg-white/10 rounded-lg hover:bg-white/20 transition-colors duration-200 min-h-[48px] text-sm md:text-base"
-                    aria-label="Ligar agora para (31) 99942-8937"
+                    aria-label="Ligar agora para (31) 99947-4866"
                   >
                     <Phone className="w-4 h-4 md:w-5 md:h-5 flex-shrink-0" />
-                    <span className="hyphens-auto break-words">Ligar agora: (31) 99942-8937</span>
+                    <span className="hyphens-auto break-words">Ligar agora: (31) 99947-4866</span>
                   </a>
                   <a 
-                    href="https://wa.me/5531999428937"
+                    href="https://wa.me/5531999474866"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-3 p-3 bg-white/10 rounded-lg hover:bg-white/20 transition-colors duration-200 min-h-[48px] text-sm md:text-base"

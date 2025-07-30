@@ -1,55 +1,212 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Sparkles, Droplets, RefreshCw, Zap, Star, ShieldCheck } from "lucide-react";
+import { 
+  Syringe, 
+  Droplet, 
+  MoveHorizontal, 
+  Activity, 
+  Sparkles, 
+  Waves, 
+  Flame, 
+  Sun, 
+  Droplets, 
+  Leaf, 
+  RefreshCw, 
+  Sparkle, 
+  AlignVerticalJustifyCenter, 
+  FlaskConical,
+  ChevronDown 
+} from "lucide-react";
 
 const ServicesSection = () => {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  const toggleService = (index: number) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
+
   const services = [
     {
+      icon: <Syringe className="w-8 h-8" />, 
+      title: "Toxina Botulínica (Botox)",
+      description:
+        "A toxina botulínica é um neuromodulador que suaviza rugas dinâmicas causadas pela movimentação dos músculos faciais, como pés de galinha, linhas da testa e da glabela. Ideal para quem busca um visual descansado e jovial sem recorrer a cirurgias, ela oferece resultados naturais e rápidos. Além do uso estético, também pode tratar bruxismo e suor excessivo. A aplicação é simples, realizada em consultório, com efeito visível em poucos dias e durabilidade de 4 a 6 meses.",
+      features: [
+        "Suavização de rugas dinâmicas",
+        "Prevenção de marcas profundas",
+        "Procedimento rápido e minimamente invasivo",
+        "Resultados naturais",
+        "Indicações terapêuticas complementares"
+      ]
+    },
+    {
+      icon: <Droplet className="w-8 h-8" />, 
+      title: "Preenchimento com Ácido Hialurônico (Facial e Corporal)",
+      description:
+        "O ácido hialurônico é uma substância biocompatível usada para devolver volume, preencher sulcos e realçar contornos faciais e corporais, como lábios, olheiras, mandíbula e mãos. É uma solução versátil e segura para quem busca harmonia e rejuvenescimento sem perder a naturalidade. O tratamento hidrata profundamente a pele e melhora sua textura de forma imediata. Pode ser feito em uma única sessão, com retorno imediato às atividades.",
+      features: [
+        "Reposição de volume",
+        "Redução de sulcos",
+        "Hidratação profunda",
+        "Harmonização facial",
+        "Resultado imediato"
+      ]
+    },
+    {
+      icon: <MoveHorizontal className="w-8 h-8" />, 
+      title: "Fios de Sustentação",
+      description:
+        "Os fios de sustentação são fios absorvíveis que promovem um efeito lifting ao reposicionar tecidos e estimular colágeno na pele. Indicados para flacidez leve a moderada, melhoram o contorno facial e combatem a queda natural dos tecidos com o tempo. O resultado é um rosto mais firme, com melhora progressiva da qualidade da pele. O procedimento é minimamente invasivo e realizado em consultório, com efeitos visíveis já nas primeiras semanas.",
+      features: [
+        "Lifting sem cirurgia",
+        "Estímulo de colágeno",
+        "Melhora da firmeza",
+        "Procedimento minimamente invasivo",
+        "Resultados progressivos"
+      ]
+    },
+    {
+      icon: <Activity className="w-8 h-8" />, 
+      title: "Ultraformer (Ultrassom Micro e Macrofocado)",
+      description:
+        "O Ultraformer utiliza ultrassom micro e macrofocado para estimular o colágeno e promover lifting facial e corporal sem cortes. É indicado para flacidez, redefinição do contorno e melhora da textura da pele, com resultados naturais e progressivos. O tratamento é seguro, confortável e com zero tempo de recuperação. Pode ser feito em qualquer época do ano, em sessões pontuais ou como manutenção.",
+      features: [
+        "Lifting não cirúrgico",
+        "Estímulo de colágeno profundo",
+        "Redefinição de contornos",
+        "Recuperação imediata",
+        "Aplicação em rosto e corpo"
+      ]
+    },
+    {
       icon: <Sparkles className="w-8 h-8" />,
-      title: "Harmonização Facial",
-      description: "Procedimentos que equilibram e valorizam os traços naturais do rosto, criando simetria e proporção perfeitas.",
-      features: ["Preenchimento labial", "Bigode chinês", "Harmonização do queixo"],
-      duration: "60-90 min",
-      price: "A partir de R$ 800"
+      title: "Volnewmer (Laser Fracionado)",
+      description:
+        "O Volnewmer é um laser fracionado de alta tecnologia, ideal para tratamento de poros dilatados, rugas finas, cicatrizes e renovação da pele. Ele atua estimulando colágeno e promovendo uma renovação profunda da pele, com melhora visível da textura e luminosidade. Indicado para quem busca rejuvenescer sem alterar traços naturais. O procedimento é realizado em consultório com anestesia tópica, e o tempo de recuperação é mínimo.",
+      features: [
+        "Renovação cutânea profunda",
+        "Melhora de textura e poros",
+        "Tratamento de cicatrizes e rugas",
+        "Estímulo de colágeno",
+        "Recuperação rápida"
+      ]
+    },
+    {
+      icon: <Waves className="w-8 h-8" />,
+      title: "Campo Eletromagnético",
+      description:
+        "A tecnologia de campo eletromagnético estimula os músculos profundamente, promovendo tonificação, definição e melhora da flacidez em áreas como abdômen, glúteos e braços. É ideal para quem busca resultados estéticos rápidos sem esforço físico ou cirurgia. Além de modelar o corpo, melhora a força muscular e o metabolismo local. As sessões são rápidas, indolores e com retorno imediato às atividades.",
+      features: [
+        "Tonificação muscular profunda",
+        "Definição corporal",
+        "Estímulo metabólico localizado",
+        "Tratamento não invasivo",
+        "Sessões rápidas"
+      ]
+    },
+    {
+      icon: <Flame className="w-8 h-8" />,
+      title: "Scizer (Ultrassom para Gordura Localizada)",
+      description:
+        "O Scizer é um aparelho de ultrassom macrofocado que elimina gordura localizada de forma seletiva e eficaz. Indicado para áreas como abdômen, flancos e coxas, promove redução de medidas sem cirurgia ou dor. Os resultados aparecem progressivamente, com melhora do contorno corporal e da firmeza da pele. Pode ser realizado em qualquer época do ano, com sessões rápidas e seguras.",
+      features: [
+        "Redução de gordura localizada",
+        "Contorno corporal aprimorado",
+        "Sessões confortáveis",
+        "Resultados progressivos",
+        "Sem tempo de recuperação"
+      ]
+    },
+    {
+      icon: <Sun className="w-8 h-8" />,
+      title: "Luz Intensa Pulsada (LIP)",
+      description:
+        "A luz intensa pulsada trata manchas, rosácea, vasinhos e sinais de fotoenvelhecimento, ao mesmo tempo em que estimula colágeno. É ideal para uniformizar o tom da pele e recuperar a luminosidade natural do rosto, colo e mãos. O tratamento é versátil, não invasivo e com pouco ou nenhum tempo de recuperação. Indicado em protocolos seriados ou sessões pontuais, dependendo da necessidade clínica.",
+      features: [
+        "Tratamento de manchas e vasos",
+        "Uniformização do tom da pele",
+        "Estímulo de colágeno",
+        "Procedimento não invasivo",
+        "Recuperação imediata"
+      ]
     },
     {
       icon: <Droplets className="w-8 h-8" />,
-      title: "Skinbooster",
-      description: "Hidratação profunda para uma pele mais viçosa, firme e luminosa através de microinjeções de ácido hialurônico.",
-      features: ["Hidratação intensa", "Melhora da textura", "Aumento da luminosidade"],
-      duration: "30-45 min",
-      price: "A partir de R$ 600"
+      title: "Lipo Enzimática",
+      description:
+        "A lipo enzimática é um tratamento injetável que utiliza enzimas específicas para quebrar a gordura localizada em regiões como abdômen, papada, flancos e culote. É uma alternativa eficaz e segura para quem quer reduzir medidas sem cirurgia. Os resultados aparecem progressivamente, com melhora visível do contorno corporal. As sessões são rápidas, realizadas em consultório, com mínima recuperação.",
+      features: [
+        "Redução de medidas",
+        "Tratamento injetável localizado",
+        "Contorno corporal definido",
+        "Sessões rápidas",
+        "Sem necessidade de cirurgia"
+      ]
+    },
+    {
+      icon: <Leaf className="w-8 h-8" />,
+      title: "Terapia Capilar",
+      description:
+        "A terapia capilar combina ativos tópicos, técnicas de estímulo e, em alguns casos, tecnologias como LED ou microagulhamento para tratar queda de cabelo, afinamento e oleosidade excessiva. É indicada tanto para homens quanto mulheres, em diferentes graus de perda capilar. O objetivo é fortalecer os fios, estimular o crescimento e equilibrar o couro cabeludo. Pode ser feita ao longo do ano, com protocolos personalizados conforme o diagnóstico.",
+      features: [
+        "Fortalecimento dos fios",
+        "Estímulo ao crescimento capilar",
+        "Equilíbrio do couro cabeludo",
+        "Tecnologia combinada",
+        "Tratamento personalizado"
+      ]
     },
     {
       icon: <RefreshCw className="w-8 h-8" />,
-      title: "Peeling Químico",
-      description: "Renovação celular para melhora de manchas, textura e brilho da pele através de ácidos específicos.",
-      features: ["Renovação celular", "Melhora de manchas", "Textura uniforme"],
-      duration: "45-60 min",
-      price: "A partir de R$ 400"
+      title: "Peeling Coreano Lhala Peel",
+      description:
+        "O Lhala Peel é um peeling coreano inovador com ativos como ácido lático e fitoterápicos, que promovem renovação celular, clareamento e melhora da textura sem agredir a pele. Ideal para peles sensíveis, manchadas ou sem viço, oferece resultados visíveis com baixa descamação. Ele trata melasmas, poros e linhas finas com suavidade e eficácia. Pode ser feito em ciclos, inclusive no verão, com acompanhamento profissional.",
+      features: [
+        "Renovação celular",
+        "Clareamento suave",
+        "Melhora de textura",
+        "Segurança para peles sensíveis",
+        "Baixa descamação"
+      ]
     },
     {
-      icon: <Zap className="w-8 h-8" />,
-      title: "Botox",
-      description: "Suavização de rugas de expressão e prevenção do envelhecimento com aplicação precisa de toxina botulínica.",
-      features: ["Rugas de expressão", "Prevenção anti-aging", "Resultado natural"],
-      duration: "20-30 min",
-      price: "A partir de R$ 500"
+      icon: <Sparkle className="w-8 h-8" />,
+      title: "Clareamento de Pele",
+      description:
+        "O clareamento de pele utiliza ativos e tecnologias para reduzir manchas, uniformizar o tom e devolver o brilho e a vitalidade à pele. É indicado para quem sofre com melasma, hiperpigmentação pós-inflamatória ou pele opaca. Os protocolos são seguros e personalizados, com foco em resultados progressivos e duradouros. O tratamento pode ser feito em qualquer época do ano com orientação dermatológica.",
+      features: [
+        "Uniformização do tom",
+        "Redução de manchas",
+        "Restauração da luminosidade",
+        "Protocolos seguros",
+        "Resultados progressivos"
+      ]
     },
     {
-      icon: <Star className="w-8 h-8" />,
-      title: "Fios de PDO",
-      description: "Lifting não cirúrgico que promove sustentação e estimula a produção natural de colágeno.",
-      features: ["Lifting natural", "Sustentação facial", "Estímulo de colágeno"],
-      duration: "90-120 min",
-      price: "A partir de R$ 1200"
+      icon: <AlignVerticalJustifyCenter className="w-8 h-8" />,
+      title: "Tratamento para Estrias",
+      description:
+        "As estrias são tratadas com tecnologias combinadas — como microagulhamento, laser e bioestimuladores — que promovem regeneração da pele e produção de colágeno. É indicado para estrias recentes ou antigas, em áreas como abdômen, coxas, glúteos e seios. O tratamento melhora a textura, a cor e a profundidade das estrias. São necessárias algumas sessões, com resultados progressivos e duradouros.",
+      features: [
+        "Tratamento de estrias novas e antigas",
+        "Melhora de textura e cor",
+        "Estímulo de colágeno",
+        "Técnicas combinadas",
+        "Resultados duradouros"
+      ]
     },
     {
-      icon: <ShieldCheck className="w-8 h-8" />,
-      title: "Laser Facial",
-      description: "Tratamentos a laser para rejuvenescimento, manchas e cicatrizes com tecnologia de última geração.",
-      features: ["Rejuvenescimento", "Manchas e melasma", "Cicatrizes de acne"],
-      duration: "30-60 min",
-      price: "A partir de R$ 350"
+      icon: <FlaskConical className="w-8 h-8" />,
+      title: "Bioestimulador de Colágeno com Ácido Polilático (Sculptra)",
+      description:
+        "O Sculptra é um bioestimulador que ativa a produção natural de colágeno, melhorando firmeza, elasticidade e sustentação da pele ao longo do tempo. Indicado para flacidez facial e corporal, promove um rejuvenescimento profundo e gradual, com efeito lifting natural. Os resultados aparecem de forma progressiva, durando até dois anos. As aplicações são feitas em consultório, geralmente em 2 a 3 sessões por ano.",
+      features: [
+        "Bioestimulação de colágeno",
+        "Melhora da firmeza e elasticidade",
+        "Efeito lifting gradual",
+        "Resultados prolongados",
+        "Aplicação facial e corporal"
+      ]
     }
   ];
 
@@ -67,7 +224,7 @@ const ServicesSection = () => {
         <div className="text-center mb-12 sm:mb-16 fade-in px-4">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light mb-4 sm:mb-6 text-foreground">
             Nossos
-            <span className="block font-bold text-primary">Serviços</span>
+            <span className="block font-bold text-primary">Tratamentos</span>
           </h2>
           <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Oferecemos uma ampla gama de tratamentos estéticos avançados, 
@@ -75,46 +232,51 @@ const ServicesSection = () => {
           </p>
         </div>
 
-        {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 px-4 sm:px-6 mb-12 sm:mb-16">
-          {services.map((service, index) => (
-            <div key={index} className="p-4 md:p-6 bg-white rounded-lg shadow-md text-center break-words hyphens-auto min-h-[280px] flex flex-col justify-between">
-              <div className="flex-grow">
-                <div className="text-primary mb-4 flex justify-center">
-                  {service.icon}
-                </div>
-                <h3 className="text-lg md:text-xl font-bold mb-3 text-foreground hyphens-auto break-words">{service.title}</h3>
-                <p className="text-sm md:text-base text-muted-foreground mb-4 hyphens-auto break-words leading-relaxed">{service.description}</p>
-                <div className="space-y-2 mb-4">
-                  {service.features.map((feature, idx) => (
-                    <div key={idx} className="text-xs md:text-sm text-muted-foreground hyphens-auto break-words">
-                      • {feature}
+        {/* Services Accordion */}
+        <div className="w-full max-w-6xl mx-auto px-4 mb-12 sm:mb-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+            {services.map((service, index) => (
+              <div key={index} className="border border-border rounded-lg bg-white shadow-sm">
+                <button 
+                  className="w-full p-4 md:p-6 flex justify-between items-center text-left min-h-[48px] hover:bg-muted/50 transition-colors duration-200 rounded-lg" 
+                  aria-label={`${openIndex === index ? 'Fechar' : 'Expandir'} tratamento: ${service.title}`}
+                  aria-expanded={openIndex === index}
+                  onClick={() => toggleService(index)}
+                >
+                  <div className="flex items-center gap-3 md:gap-4 flex-1 pr-4">
+                    <div className="text-primary flex-shrink-0">
+                      {service.icon}
                     </div>
-                  ))}
-                </div>
-                <div className="text-xs md:text-sm text-muted-foreground mb-2">
-                  <span className="font-medium">Duração:</span> {service.duration}
-                </div>
-                <div className="text-sm md:text-base font-semibold text-primary mb-4">
-                  {service.price}
-                </div>
+                    <span className="text-sm md:text-base lg:text-lg font-medium text-foreground break-words leading-relaxed">{service.title}</span>
+                  </div>
+                  <ChevronDown className={`w-5 h-5 md:w-6 md:h-6 text-primary transition-transform duration-200 flex-shrink-0 ${openIndex === index ? 'rotate-180' : ''}`} />
+                </button>
+                {openIndex === index && (
+                  <div className="px-4 md:px-6 pb-4 md:pb-6 pt-0">
+                    <div className="border-t border-border pt-4">
+                      <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-4">{service.description}</p>
+                      <div className="space-y-2">
+                        <h4 className="text-sm md:text-base font-semibold text-foreground">Benefícios:</h4>
+                        {service.features.map((feature, idx) => (
+                          <div key={idx} className="text-sm md:text-base text-muted-foreground">
+                            • {feature}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                )}
               </div>
-              <Button 
-                className="mt-auto bg-primary text-primary-foreground hover:bg-primary/90 py-2 px-4 rounded min-h-[48px] w-full"
-                aria-label={`Saiba mais sobre ${service.title}`}
-              >
-                Saiba Mais
-              </Button>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
 
         {/* CTA Section */}
         <div className="text-center bg-gradient-primary rounded-2xl p-6 md:p-8 lg:p-12 text-primary fade-in">
-          <h3 className="text-xl md:text-2xl lg:text-3xl font-light mb-4 hyphens-auto break-words">
+          <h3 className="text-xl md:text-2xl lg:text-3xl font-light mb-4">
             Não encontrou o tratamento que procura?
           </h3>
-          <p className="text-base md:text-lg opacity-90 mb-6 md:mb-8 max-w-2xl mx-auto hyphens-auto break-words leading-relaxed">
+          <p className="text-base md:text-lg opacity-90 mb-6 md:mb-8 max-w-2xl mx-auto leading-relaxed">
             Oferecemos consultas personalizadas para criar o plano de tratamento ideal para você
           </p>
           <Button

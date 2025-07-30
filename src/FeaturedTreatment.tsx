@@ -103,13 +103,14 @@ const FeaturedTreatment = () => {
                 Cada protocolo é conduzido pessoalmente pela Dra. Patrícia Paturle, com acompanhamento individualizado e foco na preservação estética da face.
               </div>
               <a 
-                href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20personalizada" 
+                href="https://wa.me/5531999474866?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20personalizada" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="block"
+                className="flex justify-center"
               >
                 <Button 
-                  className="mt-2 font-semibold text-base w-full xs:w-auto min-h-[48px]"
+                  className="mt-2 font-medium text-base px-6 py-2 whitespace-normal leading-normal"
+                  style={{ wordBreak: 'keep-all', hyphens: 'none' }}
                   aria-label="Agende sua avaliação personalizada via WhatsApp"
                 >
                   Agende sua avaliação personalizada
