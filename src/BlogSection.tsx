@@ -83,8 +83,7 @@ const BlogSection = () => {
               }}
             >
               <div 
-                className="w-full max-w-[540px] h-[600px] border border-gray-200 rounded-lg"
-                style={{ maxHeight: '600px', overflow: 'hidden' }}
+                className="w-full max-w-[540px] h-[600px] border border-gray-200 rounded-lg overflow-hidden"
               >
                 <div 
                   className="h-full overflow-y-auto"
