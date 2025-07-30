@@ -82,7 +82,10 @@ const BlogSection = () => {
                 embedRefs.current[index] = el;
               }}
             >
-              <div dangerouslySetInnerHTML={{ __html: embedCode }} />
+              <div 
+                className="w-full max-w-[540px] min-h-[400px] overflow-hidden"
+                dangerouslySetInnerHTML={{ __html: embedCode }} 
+              />
             </div>
           ))}
         </div>
