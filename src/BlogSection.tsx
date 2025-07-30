@@ -83,7 +83,7 @@ const BlogSection = () => {
               }}
             >
               <div 
-                className="w-full max-w-[540px] min-h-[400px] overflow-hidden"
+                className="w-full max-w-[540px] h-[400px] overflow-y-scroll"
                 dangerouslySetInnerHTML={{ __html: embedCode }} 
               />
             </div>
