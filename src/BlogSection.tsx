@@ -73,23 +73,35 @@ const BlogSection = () => {
         </div>
 
         {/* Instagram Embeds Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto mb-12 sm:mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto mb-12 sm:mb-16">
           {embedCodes.map((embedCode, index) => (
             <div 
               key={index} 
-              className="flex justify-center" 
+              className="relative w-full max-w-[540px] h-[600px] border border-gray-200 rounded-lg overflow-hidden bg-white"
+              style={{ 
+                position: 'relative',
+                width: '540px !important',
+                height: '600px !important',
+                maxWidth: '540px !important',
+                maxHeight: '600px !important'
+              }}
               ref={(el) => {
                 embedRefs.current[index] = el;
               }}
             >
               <div 
-                className="w-full max-w-[540px] h-[600px] border border-gray-200 rounded-lg overflow-hidden"
-              >
-                <div 
-                  className="h-full overflow-y-auto"
-                  dangerouslySetInnerHTML={{ __html: embedCode }} 
-                />
-              </div>
+                className="absolute inset-0 w-full h-full"
+                style={{
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  width: '100% !important',
+                  height: '100% !important',
+                  overflow: 'hidden !important',
+                  clipPath: 'inset(0 0 0 0)'
+                }}
+                dangerouslySetInnerHTML={{ __html: embedCode }} 
+              />
             </div>
           ))}
         </div>
