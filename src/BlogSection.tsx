@@ -73,7 +73,7 @@ const BlogSection = () => {
         </div>
 
         {/* Instagram Embeds Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto mb-12 sm:mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto mb-12 sm:mb-16">
           {embedCodes.map((embedCode, index) => (
             <div 
               key={index} 
@@ -83,9 +83,14 @@ const BlogSection = () => {
               }}
             >
               <div 
-                className="w-full max-w-[540px] h-[600px] overflow-y-auto"
-                dangerouslySetInnerHTML={{ __html: embedCode }} 
-              />
+                className="w-full max-w-[540px] h-[600px] border border-gray-200 rounded-lg"
+                style={{ maxHeight: '600px', overflow: 'hidden' }}
+              >
+                <div 
+                  className="h-full overflow-y-auto"
+                  dangerouslySetInnerHTML={{ __html: embedCode }} 
+                />
+              </div>
             </div>
           ))}
         </div>
