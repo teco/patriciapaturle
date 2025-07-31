@@ -20,9 +20,8 @@ const Footer = () => {
             </div>
             
             <p className="text-base md:text-lg lg:text-xl text-primary-foreground/80 leading-relaxed max-w-3xl mx-auto break-words">
-              Clínica de estética avançada especializada em dermatologia, tratamentos faciais e 
-              preenchimento labial. Mais de 15 anos oferecendo resultados excepcionais com 
-              segurança e naturalidade.
+            Clínica de estética avançada, referência em dermatologia, tratamentos faciais e preenchimento labial. 
+            Mais de 25 anos de experiência entregando resultados naturais, sofisticados e seguros.
             </p>
           </div>
 

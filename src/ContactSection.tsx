@@ -6,6 +6,12 @@ import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
 import { Phone, Mail, MapPin, Clock, Instagram, MessageCircle, Send, } from "lucide-react";
+
+// Declare gtag as a global function for Google Analytics
+declare global {
+  function gtag(...args: any[]): void;
+}
+
 const ContactSection = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -27,8 +33,8 @@ const ContactSection = () => {
     {
       icon: <Mail className="w-6 h-6" />,
       title: "Email",
-      content: "contato@patriciapaturle.com.br",
-      link: "mailto:contato@patriciapaturle.com.br"
+      content: "atendimento@patriciapaturle.com.br",
+      link: "mailto:atendimento@patriciapaturle.com.br"
     },
     {
       icon: <MapPin className="w-6 h-6" />,
@@ -78,24 +84,51 @@ const ContactSection = () => {
     setIsSubmitting(true);
     
     try {
-      // Simulate form submission
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      
-      toast({
-        title: "Mensagem enviada com sucesso!",
-        description: "Entraremos em contato em breve. Obrigado!",
+      // Send form data to Formspree
+      const formDataToSend = new FormData();
+      formDataToSend.append('name', formData.name);
+      formDataToSend.append('email', formData.email);
+      formDataToSend.append('phone', formData.phone);
+      formDataToSend.append('treatment', formData.treatment);
+      formDataToSend.append('message', formData.message);
+
+      const response = await fetch('https://formspree.io/f/mgvzzypn', {
+        method: 'POST',
+        body: formDataToSend,
+        headers: {
+          'Accept': 'application/json'
+        }
       });
-      
-      // Reset form
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        message: '',
-        treatment: ''
-      });
+
+      if (response.ok) {
+        // Track form submission in Google Analytics
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'form_submit', {
+            event_category: 'Contact',
+            event_label: 'Contact Form Submission',
+            treatment_interest: formData.treatment || 'Not specified'
+          });
+        }
+        
+        toast({
+          title: "Mensagem enviada com sucesso!",
+          description: "Entraremos em contato em breve. Obrigado!",
+        });
+        
+        // Reset form
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          message: '',
+          treatment: ''
+        });
+      } else {
+        throw new Error('Form submission failed');
+      }
       
     } catch (error) {
+      console.error('Formspree Error:', error);
       toast({
         title: "Erro ao enviar",
         description: "Tente novamente ou entre em contato por telefone.",
@@ -141,6 +174,7 @@ const ContactSection = () => {
                     <Label htmlFor="name" className="form-label text-sm md:text-base font-medium">Nome completo *</Label>
                     <Input
                       id="name"
+                      name="name"
                       type="text"
                       placeholder="Seu nome completo"
                       value={formData.name}
@@ -154,6 +188,7 @@ const ContactSection = () => {
                     <Label htmlFor="phone" className="form-label text-sm md:text-base font-medium">Telefone</Label>
                     <Input
                       id="phone"
+                      name="phone"
                       type="tel"
                       placeholder="(31) 99999-9999"
                       value={formData.phone}
@@ -168,6 +203,7 @@ const ContactSection = () => {
                   <Label htmlFor="email" className="form-label text-sm md:text-base font-medium">Email *</Label>
                   <Input
                     id="email"
+                    name="email"
                     type="email"
                     placeholder="seu@email.com"
                     value={formData.email}
@@ -182,6 +218,7 @@ const ContactSection = () => {
                   <Label htmlFor="treatment" className="form-label text-sm md:text-base font-medium">Tratamento de interesse</Label>
                   <select
                     id="treatment"
+                    name="treatment"
                     value={formData.treatment}
                     onChange={(e) => handleInputChange('treatment', e.target.value)}
                     className="form-input min-h-[48px] p-3 text-sm md:text-base w-full rounded-md border border-input bg-background ring-offset-background focus:ring-2 focus:ring-ring focus:ring-offset-2"
@@ -211,6 +248,7 @@ const ContactSection = () => {
                   <Label htmlFor="message" className="form-label text-sm md:text-base font-medium">Mensagem *</Label>
                   <Textarea
                     id="message"
+                    name="message"
                     placeholder="Conte-nos mais sobre seus objetivos e dúvidas..."
                     rows={5}
                     value={formData.message}
