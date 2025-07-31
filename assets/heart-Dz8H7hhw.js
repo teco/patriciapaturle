@@ -1,4 +1,4 @@
-import{c}from"./createLucideIcon-CbzRdLIX.js";/**
+import{c}from"./createLucideIcon-TJ8ercbs.js";/**
  * @license lucide-react v0.525.0 - ISC
  *
  * This source code is licensed under the ISC license.
