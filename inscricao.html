@@ -1,0 +1,548 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bloqueio Anestésico Labial - Aula Bônus | LAB Academy</title>
+    <meta name="description" content="Assista à demonstração prática comentada sobre bloqueio anestésico labial com anatomia aplicada à prática clínica." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        min-height: 100vh;
+        padding: 20px;
+      }
+
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+        background: white;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+      }
+
+      .header {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        padding: 40px 30px;
+        text-align: center;
+        color: white;
+      }
+
+      .header-badge {
+        display: inline-block;
+        background: rgba(255, 255, 255, 0.2);
+        padding: 8px 20px;
+        border-radius: 20px;
+        font-size: 14px;
+        font-weight: 600;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .header h1 {
+        font-size: 28px;
+        font-weight: 700;
+        margin-bottom: 10px;
+        line-height: 1.3;
+      }
+
+      .header p {
+        font-size: 16px;
+        opacity: 0.95;
+        margin-top: 8px;
+      }
+
+      .header-image {
+        margin: 20px 0;
+        height: 200px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+        border: 2px dashed rgba(255, 255, 255, 0.3);
+      }
+
+      .form-section {
+        padding: 40px 30px;
+      }
+
+      .form-title {
+        font-size: 24px;
+        font-weight: 700;
+        color: #2d3748;
+        margin-bottom: 10px;
+        text-align: center;
+      }
+
+      .form-subtitle {
+        font-size: 15px;
+        color: #718096;
+        margin-bottom: 30px;
+        text-align: center;
+      }
+
+      .form-group {
+        margin-bottom: 24px;
+      }
+
+      label {
+        display: block;
+        font-size: 14px;
+        font-weight: 600;
+        color: #2d3748;
+        margin-bottom: 8px;
+      }
+
+      label .required {
+        color: #e53e3e;
+        margin-left: 2px;
+      }
+
+      input[type="text"],
+      input[type="email"],
+      input[type="tel"] {
+        width: 100%;
+        padding: 12px 16px;
+        border: 2px solid #e2e8f0;
+        border-radius: 8px;
+        font-size: 15px;
+        font-family: inherit;
+        transition: all 0.2s;
+        background: white;
+      }
+
+      input:focus {
+        outline: none;
+        border-color: #667eea;
+        box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+      }
+
+      input::placeholder {
+        color: #a0aec0;
+      }
+
+      .radio-group {
+        margin-top: 10px;
+      }
+
+      .radio-option {
+        margin-bottom: 12px;
+      }
+
+      .radio-option input[type="radio"] {
+        margin-right: 10px;
+        width: 18px;
+        height: 18px;
+        cursor: pointer;
+      }
+
+      .radio-option label {
+        display: inline;
+        font-weight: 400;
+        cursor: pointer;
+        margin-bottom: 0;
+      }
+
+      .checkbox-group {
+        margin-top: 10px;
+      }
+
+      .checkbox-option {
+        display: flex;
+        align-items: flex-start;
+      }
+
+      .checkbox-option input[type="checkbox"] {
+        margin-right: 10px;
+        margin-top: 2px;
+        width: 18px;
+        height: 18px;
+        cursor: pointer;
+        flex-shrink: 0;
+      }
+
+      .checkbox-option label {
+        display: inline;
+        font-weight: 400;
+        cursor: pointer;
+        margin-bottom: 0;
+        line-height: 1.5;
+      }
+
+      .error-message {
+        color: #e53e3e;
+        font-size: 13px;
+        margin-top: 6px;
+        display: none;
+      }
+
+      .error-message.show {
+        display: block;
+      }
+
+      input.error,
+      .radio-group.error {
+        border-color: #e53e3e;
+      }
+
+      .submit-btn {
+        width: 100%;
+        padding: 16px;
+        background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s;
+        margin-top: 10px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      .submit-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 20px rgba(72, 187, 120, 0.3);
+      }
+
+      .submit-btn:active {
+        transform: translateY(0);
+      }
+
+      .submit-btn:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+        transform: none;
+      }
+
+      .loading {
+        display: none;
+        text-align: center;
+        padding: 20px;
+        color: #667eea;
+        font-weight: 600;
+      }
+
+      .loading.show {
+        display: block;
+      }
+
+      @media (max-width: 640px) {
+        .container {
+          margin: 0;
+          border-radius: 0;
+        }
+
+        .form-section {
+          padding: 30px 20px;
+        }
+
+        .header {
+          padding: 30px 20px;
+        }
+
+        .header h1 {
+          font-size: 24px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header-badge">LAB ACADEMY</div>
+        <div class="header-badge" style="margin-top: 5px; background: rgba(255, 255, 255, 0.25);">AULA BÔNUS</div>
+        <h1>Bloqueio Anestésico Labial</h1>
+        <p>Anatomia aplicada à prática clínica</p>
+        <div class="header-image">
+          [Imagem do procedimento]
+        </div>
+        <p style="font-size: 14px; opacity: 0.9;">Módulo integrante do Programa Online de Imersão em Lábios</p>
+      </div>
+
+      <div class="form-section">
+        <h2 class="form-title">Bloqueio anestésico labial<br>Demonstração prática comentada</h2>
+        <p class="form-subtitle">Preencha seus dados abaixo para liberar o acesso imediato à aula.</p>
+
+        <form id="registrationForm">
+          <!-- Nome Completo -->
+          <div class="form-group">
+            <label for="name">Nome completo <span class="required">*</span></label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              placeholder="Seu nome completo"
+            />
+            <div class="error-message" id="nameError">Por favor, insira seu nome completo.</div>
+          </div>
+
+          <!-- Email -->
+          <div class="form-group">
+            <label for="email">Email <span class="required">*</span></label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              placeholder="example@example.com"
+            />
+            <div class="error-message" id="emailError">Por favor, insira um email válido.</div>
+          </div>
+
+          <!-- WhatsApp -->
+          <div class="form-group">
+            <label for="whatsapp">WhatsApp (com DDD) <span class="required">*</span></label>
+            <input
+              type="tel"
+              id="whatsapp"
+              name="whatsapp"
+              required
+              placeholder="(00) 00000-0000"
+              maxlength="15"
+            />
+            <div class="error-message" id="whatsappError">Favor inserir um número de telefone válido.</div>
+          </div>
+
+          <!-- Experiência -->
+          <div class="form-group">
+            <label>Você já realiza preenchimento labial? <span class="required">*</span></label>
+            <div class="radio-group" id="experienceGroup">
+              <div class="radio-option">
+                <input type="radio" id="exp1" name="experience" value="Sim, realizo com frequência" required />
+                <label for="exp1">Sim, realizo com frequência</label>
+              </div>
+              <div class="radio-option">
+                <input type="radio" id="exp2" name="experience" value="Sim, mas ainda tenho insegurança" />
+                <label for="exp2">Sim, mas ainda tenho insegurança</label>
+              </div>
+              <div class="radio-option">
+                <input type="radio" id="exp3" name="experience" value="Estou iniciando na área" />
+                <label for="exp3">Estou iniciando na área</label>
+              </div>
+              <div class="radio-option">
+                <input type="radio" id="exp4" name="experience" value="Ainda não realizo, quero aprender" />
+                <label for="exp4">Ainda não realizo, quero aprender</label>
+              </div>
+            </div>
+            <div class="error-message" id="experienceError">Por favor, selecione uma opção.</div>
+          </div>
+
+          <!-- Autorização -->
+          <div class="form-group">
+            <div class="checkbox-group">
+              <div class="checkbox-option">
+                <input type="checkbox" id="consent" name="consent" required />
+                <label for="consent">
+                  Autorizo receber conteúdos técnicos do LAB Academy por e-mail e WhatsApp. <span class="required">*</span>
+                </label>
+              </div>
+            </div>
+            <div class="error-message" id="consentError">Você precisa autorizar para continuar.</div>
+          </div>
+
+          <button type="submit" class="submit-btn" id="submitBtn">Enviar</button>
+        </form>
+
+        <div class="loading" id="loading">
+          Processando sua inscrição...
+        </div>
+      </div>
+    </div>
+
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+      // Initialize EmailJS
+      // TODO: Replace with your actual EmailJS public key
+      emailjs.init('YOUR_PUBLIC_KEY');
+
+      // WhatsApp formatting
+      function formatWhatsApp(value) {
+        // Remove all non-digits
+        const digits = value.replace(/\D/g, '');
+
+        // Format: (XX) XXXXX-XXXX
+        if (digits.length <= 2) {
+          return digits;
+        } else if (digits.length <= 7) {
+          return `(${digits.slice(0, 2)}) ${digits.slice(2)}`;
+        } else {
+          return `(${digits.slice(0, 2)}) ${digits.slice(2, 7)}-${digits.slice(7, 11)}`;
+        }
+      }
+
+      // WhatsApp input formatting
+      const whatsappInput = document.getElementById('whatsapp');
+      whatsappInput.addEventListener('input', function(e) {
+        e.target.value = formatWhatsApp(e.target.value);
+      });
+
+      // Form validation
+      function validateForm() {
+        let isValid = true;
+
+        // Validate name
+        const name = document.getElementById('name');
+        const nameError = document.getElementById('nameError');
+        if (name.value.trim().length < 3) {
+          name.classList.add('error');
+          nameError.classList.add('show');
+          isValid = false;
+        } else {
+          name.classList.remove('error');
+          nameError.classList.remove('show');
+        }
+
+        // Validate email
+        const email = document.getElementById('email');
+        const emailError = document.getElementById('emailError');
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email.value)) {
+          email.classList.add('error');
+          emailError.classList.add('show');
+          isValid = false;
+        } else {
+          email.classList.remove('error');
+          emailError.classList.remove('show');
+        }
+
+        // Validate WhatsApp
+        const whatsapp = document.getElementById('whatsapp');
+        const whatsappError = document.getElementById('whatsappError');
+        const whatsappDigits = whatsapp.value.replace(/\D/g, '');
+        if (whatsappDigits.length < 10 || whatsappDigits.length > 11) {
+          whatsapp.classList.add('error');
+          whatsappError.classList.add('show');
+          isValid = false;
+        } else {
+          whatsapp.classList.remove('error');
+          whatsappError.classList.remove('show');
+        }
+
+        // Validate experience
+        const experienceGroup = document.getElementById('experienceGroup');
+        const experienceError = document.getElementById('experienceError');
+        const experienceSelected = document.querySelector('input[name="experience"]:checked');
+        if (!experienceSelected) {
+          experienceGroup.classList.add('error');
+          experienceError.classList.add('show');
+          isValid = false;
+        } else {
+          experienceGroup.classList.remove('error');
+          experienceError.classList.remove('show');
+        }
+
+        // Validate consent
+        const consent = document.getElementById('consent');
+        const consentError = document.getElementById('consentError');
+        if (!consent.checked) {
+          consentError.classList.add('show');
+          isValid = false;
+        } else {
+          consentError.classList.remove('show');
+        }
+
+        return isValid;
+      }
+
+      // Generate access code
+      function generateAccessCode() {
+        const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+        let code = '';
+        for (let i = 0; i < 8; i++) {
+          code += chars.charAt(Math.floor(Math.random() * chars.length));
+        }
+        return code;
+      }
+
+      // Form submission
+      document.getElementById('registrationForm').addEventListener('submit', async function(e) {
+        e.preventDefault();
+
+        if (!validateForm()) {
+          return;
+        }
+
+        const submitBtn = document.getElementById('submitBtn');
+        const loading = document.getElementById('loading');
+        const form = document.getElementById('registrationForm');
+
+        // Show loading
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Enviando...';
+        loading.classList.add('show');
+
+        // Generate access code
+        const accessCode = generateAccessCode();
+
+        // Prepare form data
+        const formData = {
+          name: document.getElementById('name').value,
+          email: document.getElementById('email').value,
+          whatsapp: document.getElementById('whatsapp').value,
+          experience: document.querySelector('input[name="experience"]:checked').value,
+          accessCode: accessCode,
+          videoUrl: window.location.origin + '/aula.html?code=' + accessCode
+        };
+
+        try {
+          // Send email via EmailJS
+          // TODO: Replace with your EmailJS service ID, template ID
+          await emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', {
+            to_email: formData.email,
+            to_name: formData.name,
+            access_code: formData.accessCode,
+            video_url: formData.videoUrl,
+            whatsapp: formData.whatsapp,
+            experience: formData.experience
+          });
+
+          // Store access code in localStorage
+          localStorage.setItem('accessCode_' + accessCode, JSON.stringify({
+            timestamp: Date.now(),
+            email: formData.email
+          }));
+
+          // Redirect to video page
+          window.location.href = '/aula.html?code=' + accessCode;
+
+        } catch (error) {
+          console.error('Error:', error);
+          alert('Ocorreu um erro ao processar sua inscrição. Por favor, tente novamente.');
+
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Enviar';
+          loading.classList.remove('show');
+        }
+      });
+
+      // Remove error styling on input
+      document.querySelectorAll('input').forEach(input => {
+        input.addEventListener('input', function() {
+          this.classList.remove('error');
+          const errorId = this.id + 'Error';
+          const errorElement = document.getElementById(errorId);
+          if (errorElement) {
+            errorElement.classList.remove('show');
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
