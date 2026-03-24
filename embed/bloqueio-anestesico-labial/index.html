@@ -18,11 +18,38 @@
       width: 100%; height: 100%;
       border: none;
     }
+    #cta {
+      display: none;
+      position: absolute;
+      bottom: 60px;
+      right: 16px;
+      z-index: 10;
+      background: rgba(20, 20, 20, 0.88);
+      color: #fff;
+      padding: 12px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      max-width: 210px;
+      line-height: 1.4;
+    }
+    #cta strong {
+      display: block;
+      font-size: 14px;
+      font-family: sans-serif;
+    }
+    #cta span {
+      display: block;
+      font-size: 12px;
+      font-family: sans-serif;
+      opacity: 0.8;
+      margin-top: 2px;
+    }
   </style>
 </head>
 <body>
   <div class="video-wrapper">
     <iframe
+      id="vimeo-player"
       src="https://player.vimeo.com/video/1176329057?h=9bcf05f018&badge=0&autopause=0&player_id=0&app_id=58479"
       width="960"
       height="540"
@@ -30,7 +57,39 @@
       referrerpolicy="strict-origin-when-cross-origin"
       title="Aula Liberada Bloqueio Anestésico Labial"
     ></iframe>
+    <a id="cta" href="https://patriciapaturle.hotmart.host/imersao-em-labios-lab-academy-1d8bf07f-6c97-4943-9d5d-5a1a383a3a6f" target="_blank">
+      <strong id="cta-title"></strong>
+      <span id="cta-sub"></span>
+    </a>
   </div>
   <script src="https://player.vimeo.com/api/player.js"></script>
+  <script>
+    var ctas = [
+      { from: 270, title: 'Vá além do volume',    sub: 'Ver o curso completo' },
+      { from: 510, title: 'Construção Labial',     sub: 'Ver o curso completo' },
+      { from: 690, title: 'Curso Imersão Labial',  sub: 'Vagas abertas: Lote 1' },
+      { from: 720, title: 'Garantir Lote 1',       sub: 'De R$1.997,00 por R$497' },
+    ];
+
+    var player = new Vimeo.Player('vimeo-player');
+    var cta      = document.getElementById('cta');
+    var ctaTitle = document.getElementById('cta-title');
+    var ctaSub   = document.getElementById('cta-sub');
+
+    player.on('timeupdate', function(data) {
+      var seconds = data.seconds;
+      var active = null;
+      for (var i = 0; i < ctas.length; i++) {
+        if (seconds >= ctas[i].from) active = ctas[i];
+      }
+      if (active) {
+        ctaTitle.textContent = active.title;
+        ctaSub.textContent   = active.sub;
+        cta.style.display    = 'block';
+      } else {
+        cta.style.display = 'none';
+      }
+    });
+  </script>
 </body>
 </html>
