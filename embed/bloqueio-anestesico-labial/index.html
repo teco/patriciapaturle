@@ -14,8 +14,8 @@
     .video-wrapper {
       position: relative;
       /* Fit 16:9 inside viewport in any orientation without overflow */
-      width: min(100vw, calc(100vh * 16 / 9));
-      height: min(100vh, calc(100vw * 9 / 16));
+      width: min(100vw, calc(100dvh * 16 / 9));
+      height: min(100dvh, calc(100vw * 9 / 16));
       overflow: hidden;
     }
     iframe {
@@ -27,7 +27,7 @@
     #cta {
       display: none;
       position: absolute;
-      bottom: 12px;
+      bottom: 56px;
       right: 12px;
       z-index: 10;
       background: rgba(20, 20, 20, 0.88);
