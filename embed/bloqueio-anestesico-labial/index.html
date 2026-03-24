@@ -6,12 +6,16 @@
   <title>Aula Liberada – Bloqueio Anestésico Labial</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html, body { width: 100%; height: 100%; background: #000; overflow: hidden; }
+    html, body {
+      width: 100%; height: 100%;
+      background: #000; overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+    }
     .video-wrapper {
       position: relative;
-      /* Maintain 16:9 based on viewport width, capped at viewport height */
-      width: 100vw;
-      height: min(56.25vw, 100vh);
+      /* Fit 16:9 inside viewport in any orientation without overflow */
+      width: min(100vw, calc(100vh * 16 / 9));
+      height: min(100vh, calc(100vw * 9 / 16));
       overflow: hidden;
     }
     iframe {
