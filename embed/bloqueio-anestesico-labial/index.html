@@ -27,8 +27,9 @@
     #cta {
       display: none;
       position: absolute;
-      bottom: 10%;
-      right: 2%;
+      /* 70px clears Vimeo's controls bar (~50px) with breathing room */
+      bottom: 70px;
+      right: 12px;
       z-index: 10;
       background: rgba(20, 20, 20, 0.88);
       color: #fff;
@@ -53,7 +54,7 @@
   </style>
 </head>
 <body>
-  <div class="video-wrapper">
+  <div class="video-wrapper" id="wrapper">
     <iframe
       id="vimeo-player"
       src="https://player.vimeo.com/video/1176329057?h=9bcf05f018&badge=0&autopause=0&player_id=0&app_id=58479"
@@ -77,10 +78,25 @@
       { from: 720, title: 'Garantir Lote 1',       sub: 'De R$1.997,00 por R$497' },
     ];
 
-    var player = new Vimeo.Player('vimeo-player');
+    var wrapper  = document.getElementById('wrapper');
+    var iframe   = document.getElementById('vimeo-player');
     var cta      = document.getElementById('cta');
     var ctaTitle = document.getElementById('cta-title');
     var ctaSub   = document.getElementById('cta-sub');
+
+    // Redirect fullscreen requests from the iframe to the wrapper so our
+    // CTA overlay remains visible when the user taps the fullscreen button.
+    ['requestFullscreen', 'webkitRequestFullscreen', 'mozRequestFullScreen', 'msRequestFullscreen']
+      .forEach(function(method) {
+        if (iframe[method]) {
+          iframe[method] = function() {
+            var wrapperFn = wrapper[method] || wrapper.requestFullscreen;
+            if (wrapperFn) return wrapperFn.call(wrapper);
+          };
+        }
+      });
+
+    var player = new Vimeo.Player('vimeo-player');
 
     player.on('timeupdate', function(data) {
       var seconds = data.seconds;
