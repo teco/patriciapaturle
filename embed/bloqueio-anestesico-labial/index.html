@@ -27,8 +27,8 @@
     #cta {
       display: none;
       position: absolute;
-      /* 70px clears Vimeo's controls bar (~50px) with breathing room */
-      bottom: 70px;
+      /* 100px clears Vimeo's controls bar (~80-90px) with breathing room */
+      bottom: 100px;
       right: 12px;
       z-index: 10;
       background: rgba(20, 20, 20, 0.88);
@@ -84,17 +84,27 @@
     var ctaTitle = document.getElementById('cta-title');
     var ctaSub   = document.getElementById('cta-sub');
 
-    // Redirect fullscreen requests from the iframe to the wrapper so our
-    // CTA overlay remains visible when the user taps the fullscreen button.
-    ['requestFullscreen', 'webkitRequestFullscreen', 'mozRequestFullScreen', 'msRequestFullscreen']
-      .forEach(function(method) {
-        if (iframe[method]) {
-          iframe[method] = function() {
-            var wrapperFn = wrapper[method] || wrapper.requestFullscreen;
-            if (wrapperFn) return wrapperFn.call(wrapper);
-          };
-        }
-      });
+    // Vimeo's player runs inside the iframe and calls fullscreen on its own
+    // document — so document.fullscreenElement in the parent becomes the iframe.
+    // When that happens, exit and re-enter fullscreen at the wrapper level so
+    // our CTA overlay is included in the fullscreen element.
+    function onFullscreenChange() {
+      var fsEl = document.fullscreenElement || document.webkitFullscreenElement;
+      if (fsEl !== iframe) return;
+      var exit = document.exitFullscreen
+               || document.webkitExitFullscreen;
+      var enter = wrapper.requestFullscreen
+                || wrapper.webkitRequestFullscreen;
+      if (!exit || !enter) return;
+      var p = exit.call(document);
+      if (p && p.then) {
+        p.then(function() { enter.call(wrapper); }).catch(function() {});
+      } else {
+        enter.call(wrapper);
+      }
+    }
+    document.addEventListener('fullscreenchange',       onFullscreenChange);
+    document.addEventListener('webkitfullscreenchange', onFullscreenChange);
 
     var player = new Vimeo.Player('vimeo-player');
 
