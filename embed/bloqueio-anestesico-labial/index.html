@@ -158,17 +158,14 @@
 
     var currentActive = null;
     var fadeTimer     = null;
-    var trackedPlay   = false;
-    var tracked50     = false;
+    var trackedPlay     = false;
+    var tracked50       = false;
+    var trackedComplete = false;
 
     player.on('play', function() {
       if (trackedPlay) return;
       trackedPlay = true;
       fbq('trackCustom', 'VideoPlay', { video_name: 'Bloqueio Anestésico' });
-    });
-
-    player.on('ended', function() {
-      fbq('trackCustom', 'VideoComplete', { video_name: 'Bloqueio Anestésico' });
     });
 
     player.on('timeupdate', function(data) {
@@ -178,6 +175,11 @@
       if (!tracked50 && (seconds / duration) >= 0.5) {
         fbq('trackCustom', 'VideoWatched50', { video_name: 'Bloqueio Anestésico' });
         tracked50 = true;
+      }
+
+      if (!trackedComplete && seconds >= 750) {
+        fbq('trackCustom', 'VideoComplete', { video_name: 'Bloqueio Anestésico' });
+        trackedComplete = true;
       }
 
       var active = null;
