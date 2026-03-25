@@ -171,13 +171,6 @@
       fbq('trackCustom', 'VideoComplete', { video_name: 'Bloqueio Anestésico' });
     });
 
-    cta.addEventListener('click', function() {
-      fbq('track', 'InitiateCheckout', {
-        content_name: 'Imersão em Lábios',
-        content_category: ctaTitle.textContent,
-      });
-    });
-
     player.on('timeupdate', function(data) {
       var seconds = data.seconds;
       var duration = data.duration;
