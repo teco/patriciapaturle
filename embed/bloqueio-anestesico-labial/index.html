@@ -70,6 +70,32 @@
       height: 18px;
       opacity: 0.85;
     }
+
+    /* Landscape mobile */
+    @media (orientation: landscape) and (max-height: 500px) {
+      #cta {
+        width: min(160px, 28%);
+        padding: 8px 28px 8px 10px;
+        border-radius: 5px;
+      }
+      #cta strong { font-size: 12px; }
+      #cta span   { font-size: 10px; margin-top: 2px; }
+      #cta svg    { width: 13px; height: 13px; top: 7px; right: 7px; }
+    }
+
+    /* Portrait mobile */
+    @media (orientation: portrait) and (max-width: 600px) {
+      #cta {
+        width: min(130px, 36%);
+        padding: 7px 24px 7px 9px;
+        border-radius: 5px;
+        top: 8px;
+        right: 8px;
+      }
+      #cta strong { font-size: 11px; }
+      #cta span   { font-size: 9px;  margin-top: 2px; }
+      #cta svg    { width: 11px; height: 11px; top: 6px; right: 6px; }
+    }
   </style>
 </head>
 <body>
