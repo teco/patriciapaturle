@@ -4,6 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Aula Liberada – Bloqueio Anestésico Labial</title>
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '3390735831090068');
+  fbq('track', 'PageView');
+  fbq('track', 'ViewContent', { content_ids: ['aula bonus'] });
+  </script>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=3390735831090068&ev=PageView&noscript=1"/></noscript>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html, body {
@@ -143,10 +157,36 @@
     var player = new Vimeo.Player('vimeo-player');
 
     var currentActive = null;
-    var fadeTimer = null;
+    var fadeTimer     = null;
+    var trackedPlay   = false;
+    var tracked50     = false;
+
+    player.on('play', function() {
+      if (trackedPlay) return;
+      trackedPlay = true;
+      fbq('trackCustom', 'VideoPlay', { video_name: 'Bloqueio Anestésico' });
+    });
+
+    player.on('ended', function() {
+      fbq('trackCustom', 'VideoComplete', { video_name: 'Bloqueio Anestésico' });
+    });
+
+    cta.addEventListener('click', function() {
+      fbq('track', 'InitiateCheckout', {
+        content_name: 'Imersão em Lábios',
+        content_category: ctaTitle.textContent,
+      });
+    });
 
     player.on('timeupdate', function(data) {
-      var seconds = data.seconds;
+      var seconds  = data.seconds;
+      var duration = data.duration;
+
+      if (!tracked50 && (seconds / duration) >= 0.5) {
+        fbq('trackCustom', 'VideoWatched50', { video_name: 'Bloqueio Anestésico' });
+        tracked50 = true;
+      }
+
       var active = null;
       for (var i = 0; i < ctas.length; i++) {
         var c = ctas[i];
