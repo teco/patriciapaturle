@@ -13,9 +13,9 @@
   t.src=v;s=b.getElementsByTagName(e)[0];
   s.parentNode.insertBefore(t,s)}(window, document,'script',
   'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '3390735831090068'); 
+  fbq('init', '3390735831090068');
   fbq('track', 'PageView');
-  fbq('track', 'ViewContent', { content_ids: 'aula bonus' });
+  fbq('track', 'ViewContent', { content_ids: ['aula bonus'] });
   </script>
   <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=3390735831090068&ev=PageView&noscript=1"/></noscript>
   <style>
@@ -157,40 +157,36 @@
     var player = new Vimeo.Player('vimeo-player');
 
     var currentActive = null;
-    var fadeTimer = null;
+    var fadeTimer     = null;
+    var trackedPlay   = false;
+    var tracked50     = false;
 
-    // --- NEW TRACKING LOGIC ---
-    var tracked50 = false;
-
-    // 1. Track when they hit PLAY
     player.on('play', function() {
+      if (trackedPlay) return;
+      trackedPlay = true;
       fbq('trackCustom', 'VideoPlay', { video_name: 'Bloqueio Anestésico' });
     });
 
-    // 2. Track when they FINISH the video
     player.on('ended', function() {
       fbq('trackCustom', 'VideoComplete', { video_name: 'Bloqueio Anestésico' });
     });
 
-    // 3. Track when they click your CTA button
-   cta.addEventListener('click', function() {
-      fbq('track', 'InitiateCheckout', { 
+    cta.addEventListener('click', function() {
+      fbq('track', 'InitiateCheckout', {
         content_name: 'Imersão em Lábios',
-        content_category: ctaTitle.textContent // Now this captures 'Vá além do volume' or 'Garantir Lote 1'
+        content_category: ctaTitle.textContent,
       });
     });
-    // --- END TRACKING LOGIC ---
 
     player.on('timeupdate', function(data) {
       var seconds = data.seconds;
       var duration = data.duration;
 
-      // --- ALSO NEW Track 50% progress ---
       if (!tracked50 && (seconds / duration) >= 0.5) {
         fbq('trackCustom', 'VideoWatched50', { video_name: 'Bloqueio Anestésico' });
         tracked50 = true;
       }
-      
+
       var active = null;
       for (var i = 0; i < ctas.length; i++) {
         var c = ctas[i];
