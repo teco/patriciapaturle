@@ -179,7 +179,7 @@
     });
 
     player.on('timeupdate', function(data) {
-      var seconds  = data.seconds;
+      var seconds = data.seconds;
       var duration = data.duration;
 
       if (!tracked50 && (seconds / duration) >= 0.5) {
