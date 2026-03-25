@@ -78,6 +78,7 @@
         padding: 5px 18px 5px 7px;
         border-radius: 5px;
       }
+      #cta.wide { width: min(110px, 20%); }
       #cta strong { font-size: 8px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
       #cta span   { font-size: 7px; margin-top: 1px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
       #cta svg    { width: 10px; height: 10px; top: 5px; right: 5px; }
@@ -92,6 +93,7 @@
         top: 8px;
         right: 8px;
       }
+      #cta.wide { width: min(90px, 26%); }
       #cta strong { font-size: 7px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
       #cta span   { font-size: 6px; margin-top: 1px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
       #cta svg    { width: 9px; height: 9px; top: 4px; right: 4px; }
@@ -124,8 +126,8 @@
     var ctas = [
       { from: 270, to: 280, title: 'Vá além do volume',   sub: 'Ver o curso completo' },
       { from: 510, to: 520, title: 'Construção Labial',    sub: 'Ver o curso completo' },
-      { from: 693, to: 708, title: 'Curso Imersão Labial', sub: 'Vagas abertas: Lote 1' },
-      { from: 708,          title: 'Garantir Lote 1',      sub: 'De R$1.997,00 por R$497' },
+      { from: 693, to: 708, title: 'Curso Imersão Labial', sub: 'Vagas abertas: Lote 1',   wide: true },
+      { from: 708,          title: 'Garantir Lote 1',      sub: 'De R$1.997,00 por R$497', wide: true },
     ];
 
     var wrapper  = document.getElementById('wrapper');
@@ -152,6 +154,7 @@
         if (active !== currentActive) {
           ctaTitle.textContent = active.title;
           ctaSub.textContent   = active.sub;
+          cta.classList.toggle('wide', !!active.wide);
           if (!currentActive) {
             // Was hidden — trigger entrance animation
             cta.style.animation = 'none';
