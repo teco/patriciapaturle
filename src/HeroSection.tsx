@@ -25,7 +25,7 @@ const HeroSection = () => {
       <img
         src="/hero-bg.png"
         alt="Background da Clínica Patricia Paturle"
-        className="absolute inset-0 w-full h-full object-cover opacity-10 pointer-events-none select-none bg-no-repeat bg-cover"
+        className="absolute inset-0 w-full h-full object-cover opacity-30 pointer-events-none select-none bg-no-repeat bg-cover"
         style={{ zIndex: 0 }}
       />
 
