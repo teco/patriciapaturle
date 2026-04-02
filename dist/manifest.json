@@ -1,0 +1,17 @@
+{
+  "name": "Dra. Patricia Paturle - Dermatologista",
+  "short_name": "Dra. Patricia",
+  "description": "Clínica de dermatologia estética especializada em preenchimento labial, botox e tratamentos faciais em Belo Horizonte.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1a1a2e",
+  "lang": "pt-BR",
+  "icons": [
+    {
+      "src": "/vite.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
