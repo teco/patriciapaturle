@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Aula - Bloqueio Anestésico Labial | LAB Academy</title>
+    <meta name="description" content="Assista à aula sobre bloqueio anestésico labial." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+        min-height: 100vh;
+        padding: 20px;
+        color: white;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .header {
+        text-align: center;
+        padding: 40px 20px;
+        margin-bottom: 30px;
+      }
+
+      .header-badge {
+        display: inline-block;
+        background: rgba(102, 126, 234, 0.2);
+        padding: 8px 20px;
+        border-radius: 20px;
+        font-size: 14px;
+        font-weight: 600;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        border: 1px solid rgba(102, 126, 234, 0.3);
+      }
+
+      h1 {
+        font-size: 36px;
+        font-weight: 700;
+        margin-bottom: 10px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .subtitle {
+        font-size: 18px;
+        color: rgba(255, 255, 255, 0.8);
+        margin-top: 10px;
+      }
+
+      .access-info {
+        background: rgba(72, 187, 120, 0.1);
+        border: 1px solid rgba(72, 187, 120, 0.3);
+        padding: 15px 20px;
+        border-radius: 12px;
+        margin-bottom: 30px;
+        text-align: center;
+      }
+
+      .access-info p {
+        margin: 5px 0;
+        font-size: 14px;
+      }
+
+      .access-code {
+        font-size: 20px;
+        font-weight: 700;
+        color: #48bb78;
+        margin-top: 10px;
+        letter-spacing: 2px;
+      }
+
+      .video-container {
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%; /* 16:9 aspect ratio */
+        background: rgba(0, 0, 0, 0.3);
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        margin-bottom: 40px;
+      }
+
+      .video-container iframe,
+      .video-container video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+
+      .video-placeholder {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        width: 100%;
+        padding: 40px;
+      }
+
+      .video-placeholder svg {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 20px;
+        opacity: 0.5;
+      }
+
+      .video-placeholder p {
+        font-size: 16px;
+        color: rgba(255, 255, 255, 0.6);
+      }
+
+      .content-section {
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 16px;
+        padding: 40px;
+        margin-bottom: 30px;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .content-section h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+        color: #667eea;
+      }
+
+      .content-section p {
+        line-height: 1.8;
+        color: rgba(255, 255, 255, 0.8);
+        margin-bottom: 15px;
+      }
+
+      .content-section ul {
+        list-style: none;
+        padding-left: 0;
+      }
+
+      .content-section li {
+        padding: 12px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        color: rgba(255, 255, 255, 0.8);
+      }
+
+      .content-section li:last-child {
+        border-bottom: none;
+      }
+
+      .content-section li:before {
+        content: "✓";
+        color: #48bb78;
+        font-weight: bold;
+        margin-right: 10px;
+      }
+
+      .cta-section {
+        text-align: center;
+        padding: 40px 20px;
+      }
+
+      .cta-button {
+        display: inline-block;
+        padding: 16px 40px;
+        background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+        color: white;
+        text-decoration: none;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: 600;
+        transition: all 0.2s;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      .cta-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 20px rgba(72, 187, 120, 0.3);
+      }
+
+      .access-denied {
+        text-align: center;
+        padding: 60px 20px;
+        display: none;
+      }
+
+      .access-denied.show {
+        display: block;
+      }
+
+      .access-denied h2 {
+        font-size: 28px;
+        margin-bottom: 15px;
+        color: #e53e3e;
+      }
+
+      .access-denied p {
+        font-size: 16px;
+        color: rgba(255, 255, 255, 0.7);
+        margin-bottom: 30px;
+      }
+
+      .back-button {
+        display: inline-block;
+        padding: 12px 30px;
+        background: rgba(102, 126, 234, 0.2);
+        color: white;
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: 600;
+        border: 1px solid rgba(102, 126, 234, 0.3);
+        transition: all 0.2s;
+      }
+
+      .back-button:hover {
+        background: rgba(102, 126, 234, 0.3);
+        transform: translateY(-2px);
+      }
+
+      @media (max-width: 768px) {
+        h1 {
+          font-size: 28px;
+        }
+
+        .content-section {
+          padding: 30px 20px;
+        }
+
+        .header {
+          padding: 30px 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header-badge">LAB ACADEMY</div>
+        <h1>Bloqueio Anestésico Labial</h1>
+        <p class="subtitle">Demonstração prática comentada</p>
+      </div>
+
+      <!-- Access Denied Message (shown if invalid code) -->
+      <div class="access-denied" id="accessDenied">
+        <h2>🔒 Acesso Negado</h2>
+        <p>Você precisa se inscrever primeiro para acessar este conteúdo.</p>
+        <a href="/inscricao.html" class="back-button">← Voltar para Inscrição</a>
+      </div>
+
+      <!-- Main Content (shown if valid code) -->
+      <div id="mainContent" style="display: none;">
+        <div class="access-info">
+          <p>✓ Acesso liberado com sucesso!</p>
+          <p>Seu código de acesso:</p>
+          <p class="access-code" id="displayCode">XXXXXXXX</p>
+        </div>
+
+        <div class="video-container">
+          <!-- Placeholder for video - replace with actual video embed -->
+          <div class="video-placeholder">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <p>Vídeo será carregado aqui</p>
+            <p style="font-size: 14px; margin-top: 10px; color: rgba(255, 255, 255, 0.4);">
+              Exemplo: &lt;iframe src="https://www.youtube.com/embed/VIDEO_ID"&gt;&lt;/iframe&gt;
+            </p>
+          </div>
+
+          <!-- Example YouTube embed (uncomment and replace VIDEO_ID):
+          <iframe
+            src="https://www.youtube.com/embed/VIDEO_ID"
+            title="Bloqueio Anestésico Labial"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+          -->
+
+          <!-- Example Vimeo embed (uncomment and replace VIDEO_ID):
+          <iframe
+            src="https://player.vimeo.com/video/VIDEO_ID"
+            title="Bloqueio Anestésico Labial"
+            allow="autoplay; fullscreen; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+          -->
+        </div>
+
+        <div class="content-section">
+          <h2>📚 O que você vai aprender</h2>
+          <ul>
+            <li>Anatomia detalhada dos nervos faciais relacionados aos lábios</li>
+            <li>Técnicas de bloqueio anestésico para procedimentos labiais</li>
+            <li>Pontos anatômicos de referência para aplicação segura</li>
+            <li>Protocolos de dosagem e diluição anestésica</li>
+            <li>Prevenção e manejo de complicações</li>
+            <li>Demonstração prática passo a passo</li>
+          </ul>
+        </div>
+
+        <div class="content-section">
+          <h2>💡 Sobre a Aula</h2>
+          <p>
+            Esta aula bônus faz parte do <strong>Programa Online de Imersão em Lábios</strong>
+            da LAB Academy e traz uma demonstração prática comentada sobre bloqueio anestésico labial.
+          </p>
+          <p>
+            Você vai aprender as técnicas essenciais de anatomia aplicada à prática clínica,
+            fundamentais para qualquer profissional que deseja realizar preenchimentos labiais
+            com segurança e precisão.
+          </p>
+        </div>
+
+        <div class="cta-section">
+          <h2 style="margin-bottom: 20px;">Gostou do conteúdo?</h2>
+          <p style="color: rgba(255, 255, 255, 0.7); margin-bottom: 30px;">
+            Conheça o Programa Completo de Imersão em Lábios
+          </p>
+          <a href="https://patriciapaturle.com.br" class="cta-button">Saiba Mais</a>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Check access code
+      function checkAccess() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const code = urlParams.get('code');
+
+        if (!code) {
+          // No code provided
+          document.getElementById('accessDenied').classList.add('show');
+          return;
+        }
+
+        // Check if code exists in localStorage
+        const storedData = localStorage.getItem('accessCode_' + code);
+
+        if (storedData) {
+          // Valid code - show content
+          document.getElementById('mainContent').style.display = 'block';
+          document.getElementById('displayCode').textContent = code;
+
+          // Optional: Track video view
+          const data = JSON.parse(storedData);
+          console.log('Access granted for:', data.email);
+
+          // You could send analytics here
+        } else {
+          // Invalid code
+          document.getElementById('accessDenied').classList.add('show');
+        }
+      }
+
+      // Run on page load
+      checkAccess();
+
+      // Optional: Send analytics when video is played
+      // This would require adding event listeners to the video element
+    </script>
+  </body>
+</html>
