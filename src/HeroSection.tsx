@@ -21,9 +21,9 @@ const HeroSection = () => {
       id="home" 
       className="pt-10 pb-5 bg-background relative overflow-hidden flex items-center justify-center bg-gradient-primary text-primary-foreground"
     >
-      {/* Background Image - Added bg-no-repeat bg-cover via class; ensure /hero-bg.jpg is in public/ */}
+      {/* Background Image - Using new botanical pattern */}
       <img
-        src="/hero-bg.jpg"
+        src="/hero-bg.png"
         alt="Background da Clínica Patricia Paturle"
         className="absolute inset-0 w-full h-full object-cover opacity-10 pointer-events-none select-none bg-no-repeat bg-cover"
         style={{ zIndex: 0 }}
